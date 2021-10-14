@@ -1,7 +1,7 @@
 package view;
 
 import java.util.Scanner;
-
+import java.util.ArrayList;
 import controller.LivroController;
 import model.Livro;
 
@@ -24,10 +24,13 @@ public class CadastroLivrosView {
                         listar(controller);
                 break;
                 case 3:
+                        //LivroController.alterar();
                 break;
                 case 4:
+                        //LivroController.deletar();
                 break;
                 case 0:
+                        System.out.println("Saindo do programa...");
                 break;
             }
         }while(opcaoEscolhida != 0);
@@ -36,9 +39,10 @@ public class CadastroLivrosView {
     }
 
     private static void listar(LivroController controller){
-        ArrayList<Livro> listaLivros = controller.listar();
-        for (Livro livro : listaLivros) {
-            System.out.println("\nTitulo: %s - Autor: %s - Editora: %s - Categoria: %s ");
+        ArrayList<Livro> lista = controller.listar();
+        for (Livro livro : lista) {
+            System.out.printf("\nTitulo: %s - Autor: %s - Editora: %s - Categoria: %s ", livro.getAutor(), livro.getAutor(), 
+             livro.getEditora(), livro.getCategoria());
         }
     }
 
@@ -58,6 +62,7 @@ public class CadastroLivrosView {
     private static int menu(Scanner sc) {
         System.out.println("\nMenu de Opções:");
         System.out.println("\n\t1 - Cadastrar\n\t2 - Listar\n\t3 - Alterar\n\t4 - Deletar\n\t0 - Sair");
+        System.out.print("\nDigite a opção escolhida: ");
         int opcaoEscolhida = Integer.parseInt(sc.nextLine());
         return opcaoEscolhida;
     }
