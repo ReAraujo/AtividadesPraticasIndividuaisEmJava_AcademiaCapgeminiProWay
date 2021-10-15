@@ -1,19 +1,20 @@
 package model;
 
+import java.util.UUID;
+
 public class Livro{
     private String titulo;
     private String autor;
     private String editora;
     private int numeroEdicao;
     private int anoLançamento;
-    private int id;
+    private UUID id;
 
     public Livro(int id){
-        this.id = id;
+        this.id = UUID.randomUUID();
     }
-
-    public int getId() {
-        return this.id;
+    public String getId() {
+        return id.toString();
     }
 
     public void setTitulo(String titulo) {
@@ -51,6 +52,15 @@ public class Livro{
         return this.anoLançamento;
     }
 
+    @Override
+    public String toString() {
+        return "\nID: " + this.getId() + 
+            "\nTitulo: " + this.getTitulo() +
+            "\nAutor(res): " + this.getAutor() +
+            "\nEditora: " + this.getEditora() + 
+            "\nNúmero edição: " + this.getNumeroEdicao() +
+            "\nAno lançamento: " + this.getAnoLançamento();
+    }
 
 
 
