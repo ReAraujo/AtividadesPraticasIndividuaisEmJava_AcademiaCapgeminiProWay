@@ -38,6 +38,10 @@ public class Livro extends Base {
         return categoria;
     }
 
+    public String toString() {
+        return "ID: "+this.getId()+"Nome: "+this.getNome()+"\nAutor: "+this.getAutor();
+    }
+
 
 
 
