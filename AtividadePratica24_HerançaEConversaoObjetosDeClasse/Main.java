@@ -5,10 +5,10 @@
      atribua valores para as propriedade de cada objeto. - OK!
   _  Crie um objeto da classe Object através da instância da classe Veículo. - OK!
   _  Crie um objeto da classe Object através da instância da classe Carro. - OK!
-  _  Converta o primeiro objeto da Object novamente para um novo objeto da classe Veículo.
-  _  Converta o segundo objeto da Object novamente para um novo objeto da classe Carro.
-  _  Imprima todos dos dados do objeto de Veículo convertido.
-  _  Imprima todos dos dados do objeto de Carro convertido.
+  _  Converta o primeiro objeto da Object novamente para um novo objeto da classe Veículo. - OK!
+  _  Converta o segundo objeto da Object novamente para um novo objeto da classe Carro. - OK!
+  _  Imprima todos dos dados do objeto de Veículo convertido. - OK!
+  _  Imprima todos dos dados do objeto de Carro convertido. - OK!
 */
 public class Main {
     public static void main(String[] args) {
