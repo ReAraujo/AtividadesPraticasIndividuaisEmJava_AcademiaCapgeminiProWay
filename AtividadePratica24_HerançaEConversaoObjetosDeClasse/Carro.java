@@ -7,7 +7,7 @@ public class Carro extends Veiculo {
         return "\n\t===== Carro =====" + 
             "\nMarca: " + this.marca + 
             "\nModelo: " + this.modelo + 
-            "\nNumeração Placa: " + this.placa + 
+            "\nNumeração Placa: " + super.placa + 
             "\nNúmero de Portas: " + this.numeroPortas + 
             "\nCapacidade do Porta-malas: " + this.capacidadePortaMalas;
     }

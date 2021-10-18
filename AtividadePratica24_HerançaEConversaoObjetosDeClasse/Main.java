@@ -31,7 +31,6 @@ public class Main {
 
         imprimir(carro2);
 
-
     }
     public static void imprimir(Object obj){
         System.out.println(obj.toString());
