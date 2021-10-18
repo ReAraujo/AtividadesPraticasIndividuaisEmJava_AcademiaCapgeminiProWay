@@ -5,12 +5,13 @@ public class Desktop extends Computador {
 
     @Override
     public String toString() {
-        return "\nMarca: " + this.marca + 
-               "\nMemória Ram: " + this.memoriaRam + 
-               "\nProcessador: " + this.processador + 
-               "\nDisco rígido: " + this.discoRigido +
-               "\nTamanho gabinete: " + this.tamanhoGabinete + 
-               "\nMonitor externo: " + this.monitorExterno + 
-               "\nFonte: " + this.fonte;               
+        return "\n|---------- Computador: Desktop ----------|" + 
+               "\n\tMarca: " + this.marca + 
+               "\n\tMemória Ram: " + this.memoriaRam + 
+               "\n\tProcessador: " + this.processador + 
+               "\n\tDisco rígido: " + this.discoRigido +
+               "\n\tTamanho gabinete: " + this.tamanhoGabinete + 
+               "\n\tMonitor externo: " + this.monitorExterno + 
+               "\n\tFonte: " + this.fonte;               
     }
 }

@@ -5,13 +5,14 @@ public class Notebook extends Computador{
 
     @Override
     public String toString() {
-        return "\nMarca: " + this.marca + 
-               "\nMemória Ram: " + this.memoriaRam + 
-               "\nProcessador: " + this.processador + 
-               "\nDisco rígido: " + this.discoRigido +
-               "\nBateria: " + this.bateria + 
-               "\nVelocidade Wi-fi: " + this.velocidadeWifi + 
-               "\nVersão Bluetooth: " + this.versaoBluetooth;               
+        return "\n|---------- Computador: Notebook ----------|" + 
+               "\n\tMarca: " + this.marca + 
+               "\n\tMemória Ram: " + this.memoriaRam + 
+               "\n\tProcessador: " + this.processador + 
+               "\n\tDisco rígido: " + this.discoRigido +
+               "\n\tBateria: " + this.bateria + 
+               "\n\tVelocidade Wi-fi: " + this.velocidadeWifi + 
+               "\n\tVersão Bluetooth: " + this.versaoBluetooth;               
     }
 
     

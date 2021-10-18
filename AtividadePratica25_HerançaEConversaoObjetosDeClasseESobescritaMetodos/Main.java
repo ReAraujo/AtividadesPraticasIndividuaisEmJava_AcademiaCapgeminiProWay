@@ -39,12 +39,23 @@ public class Main {
         desktop1.tamanhoGabinete = "Mini ITX";
         desktop1.monitorExterno = "Samsung 28\" ";
         desktop1.fonte = "Corsair RM850";
-        
-        
 
+        Object obj1 = computador1;
+        Object obj2 = notebook1;
+        Object obj3 = desktop1;
 
+        Computador computador2 = (Computador)obj1;
+        Notebook notebook2 = (Notebook)obj2;
+        Desktop desktop2 = (Desktop)obj3;
 
+        imprimir(computador2);
+        imprimir(notebook2);
+        imprimir(desktop2);       
 
+    }
+
+    public static void imprimir(Object obj){
+        System.out.println(obj);
     }
     
 }
