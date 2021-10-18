@@ -13,13 +13,16 @@
 public class Main {
     public static void main(String[] args) {
         Veiculo veiculo1 = new Veiculo();
-        veiculo1.marca = "Peugeot";
-        veiculo1.modelo = "208";
+        veiculo1.marca = "Fiat";
+        veiculo1.modelo = "Uno";
         veiculo1.placa = "ABC1D23";
 
         Carro carro1 = new Carro();
-        carro1.capacidadePortaMalas = 311;
+        carro1.marca = "Peugeot";
+        carro1.modelo = "208";
+        carro1.placa = "DFG1F23";
         carro1.numeroPortas = 4;
+        carro1.capacidadePortaMalas = 311;
 
         Object obj1 = veiculo1;
         Object obj2 = carro1;
