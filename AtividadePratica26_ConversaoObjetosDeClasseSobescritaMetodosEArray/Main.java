@@ -17,6 +17,7 @@
   _  Verifique se o segundo objeto de pessoa já está salvo no array,utilizando o método da classe Dados. - OK
   _  Remova o aluno do array, utilizando o método da classe Dados. - OK
 */
+
 public class Main {
     public static void main(String[] args) {
             
@@ -42,9 +43,20 @@ public class Main {
         pessoa2.sobrenome = "de Ciclana";
         pessoa2.idade = "38";
 
+        System.out.println(pessoa1);
+        System.out.println(aluno1);
+        System.out.println(pessoa2);
+
         System.out.println(dados.contains(pessoa2));
 
+        System.out.println(dados.tamanhoLista());
+
         dados.remover(pessoa2);
+
+        System.out.println(dados.tamanhoLista());
+
+
+
 
 
 

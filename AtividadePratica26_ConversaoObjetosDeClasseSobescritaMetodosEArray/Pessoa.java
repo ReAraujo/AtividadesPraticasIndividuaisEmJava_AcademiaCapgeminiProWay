@@ -14,7 +14,7 @@ public class Pessoa{
 
     @Override
     public String toString() {
-        return "\n|--------------- Pessoa ---------------|" + 
+        return "\n|-------------------- Pessoa --------------------|" + 
                "\n\tNome completo: " + this.nome + " " + this.sobrenome +
                "\n\tIdade: " + this.idade;
     }
