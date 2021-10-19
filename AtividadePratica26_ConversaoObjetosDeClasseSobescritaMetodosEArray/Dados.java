@@ -32,7 +32,7 @@ public class Dados {
 
     public String remover(Object obj){
 
-        for (int i = 0; i < dados.length; i++) {
+        for (int i = 0; i < posicaoAtual; i++) {
             if(dados[i].equals(obj)){
                 reorganizar(i);
                 posicaoAtual --;
