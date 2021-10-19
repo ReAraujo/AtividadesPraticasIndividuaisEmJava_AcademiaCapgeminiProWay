@@ -5,10 +5,12 @@ public class Pessoa{
 
     @Override
     public boolean equals(Object obj) {
-        Pessoa outraPessoa = (Pessoa)obj;
-        if(this.nome.equals(outraPessoa.nome) && this.sobrenome.equals(outraPessoa.sobrenome) && this.idade.equals(outraPessoa.idade)){
-            return true;
-        }
+        if (obj instanceof Pessoa){
+            Pessoa outraPessoa = (Pessoa)obj;
+            if(this.nome.equals(outraPessoa.nome) && this.sobrenome.equals(outraPessoa.sobrenome) && this.idade.equals(outraPessoa.idade)){
+                return true;
+            }
+        }    
         return false;
     }
 
