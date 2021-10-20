@@ -8,9 +8,7 @@ public class Aluno extends Pessoa {
     public boolean equals(Object obj) {
         if (obj instanceof Aluno){
             Aluno outroAluno = (Aluno)obj;
-            if(this.nome.equals(outroAluno.nome) && 
-              this.sobrenome.equals(outroAluno.sobrenome) && 
-              this.idade.equals(outroAluno.idade) && 
+            if(super.equals(outroAluno) && 
               this.matricula.equals(outroAluno.matricula) && 
               this.turma.equals(outroAluno.turma) && 
               this.curso.equals(outroAluno.curso)){
