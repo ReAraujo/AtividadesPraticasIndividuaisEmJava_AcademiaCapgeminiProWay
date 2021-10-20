@@ -37,10 +37,6 @@ public class Main {
 
         // Criação do objeto de Dados e adição dos objetos pessoa e aluno no Array
         Dados dados = new Dados();
-        dados.adicionar(pessoa1);
-        dados.adicionar(aluno1);
-
-        // Impressão do método adicionar da classe Dados
         System.out.println(dados.adicionar(pessoa1));
         System.out.println(dados.adicionar(aluno1));
 
@@ -62,7 +58,6 @@ public class Main {
         System.out.println(dados.tamanhoLista());
 
         // Removendo objeto pessoa2   
-        dados.remover(pessoa2);
         System.out.println(dados.remover(pessoa2));
 
         // Imprimindo novamente o tamanho da lista para verificar a remoção do objeto pessoa2
