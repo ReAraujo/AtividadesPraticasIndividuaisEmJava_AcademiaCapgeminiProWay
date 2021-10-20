@@ -50,7 +50,7 @@ public class Dados {
     }
 
     public boolean contains(Object obj){
-        for (int i = 0; i < posicaoAtual-1; i++) {
+        for (int i = 0; i < posicaoAtual; i++) {
             if(dados[i].equals(obj)){
                 return true;
             }
