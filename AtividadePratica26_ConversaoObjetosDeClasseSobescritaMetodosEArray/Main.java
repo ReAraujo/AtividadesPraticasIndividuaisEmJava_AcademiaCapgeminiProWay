@@ -35,6 +35,7 @@ public class Main {
         aluno1.turma = "Q.326";
         aluno1.curso = "Bacharel em Química";
 
+        // Criação do objeto de Dados e adição dos objetos pessoa e aluno no Array
         Dados dados = new Dados();
         dados.adicionar(pessoa1);
         dados.adicionar(aluno1);
@@ -62,11 +63,11 @@ public class Main {
 
         // Removendo objeto pessoa2   
         dados.remover(pessoa2);
+        System.out.println(dados.remover(pessoa2));
 
         // Imprimindo novamente o tamanho da lista para verificar a remoção do objeto pessoa2
         System.out.println(dados.tamanhoLista());
 
-        System.out.println(dados.adicionar(pessoa1));
 
 
 
