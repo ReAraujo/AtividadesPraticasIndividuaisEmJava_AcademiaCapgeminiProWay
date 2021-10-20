@@ -7,7 +7,9 @@ public class Pessoa{
     public boolean equals(Object obj) {
         if (obj instanceof Pessoa){
             Pessoa outraPessoa = (Pessoa)obj;
-            if(this.nome.equals(outraPessoa.nome) && this.sobrenome.equals(outraPessoa.sobrenome) && this.idade.equals(outraPessoa.idade)){
+            if(this.nome.equals(outraPessoa.nome) && 
+               this.sobrenome.equals(outraPessoa.sobrenome) && 
+               this.idade.equals(outraPessoa.idade)){
                 return true;
             }
         }    
