@@ -17,11 +17,11 @@ public class Aluno extends Pessoa {
     
     @Override
     public String toString() {
-        return "\n|-------------------- Aluno --------------------|" + 
-               "\n\tNome completo: " + this.nome + " " + this.sobrenome +
-               "\n\tIdade: " + this.idade +
+        return super.toString() + 
                "\n\tMatrícula: " + this.matricula +
                "\n\tTurma: " + this.turma +
                "\n\tCurso: " + this.curso;
     }
+
+
 }

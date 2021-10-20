@@ -20,7 +20,8 @@
 
 public class Main {
     public static void main(String[] args) {
-            
+
+        // Criação dos objetos e atribuição dos valores aos atributos de cada objeto      
         Pessoa pessoa1 = new Pessoa();
         pessoa1.nome = "Fulana";
         pessoa1.sobrenome = "de Ciclana";
@@ -43,16 +44,21 @@ public class Main {
         pessoa2.sobrenome = "de Ciclana";
         pessoa2.idade = "38";
 
+        // Impressão dos objetos criados com seus atributos
         System.out.println(pessoa1);
         System.out.println(aluno1);
         System.out.println(pessoa2);
 
+        // Verificando se o segundo objeto de pessoa já está salvo no array utilizando o método contains da classe Dados
         System.out.println(dados.contains(pessoa2));
 
+        // Imprimindo o tamanho da lista para verificar 
         System.out.println(dados.tamanhoLista());
 
+        // Removendo objeto pessoa2   
         dados.remover(pessoa2);
 
+        // Imprimindo novamente 
         System.out.println(dados.tamanhoLista());
 
 
