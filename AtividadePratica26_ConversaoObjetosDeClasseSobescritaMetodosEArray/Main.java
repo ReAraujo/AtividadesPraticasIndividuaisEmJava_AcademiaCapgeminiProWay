@@ -58,7 +58,7 @@ public class Main {
         // Removendo objeto pessoa2   
         dados.remover(pessoa2);
 
-        // Imprimindo novamente 
+        // Imprimindo novamente para verificar a remoção do objeto pessoa2
         System.out.println(dados.tamanhoLista());
 
 
