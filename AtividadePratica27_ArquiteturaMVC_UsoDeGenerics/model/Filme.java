@@ -1,10 +1,10 @@
 package model;
 
 public class Filme {
-    public int id;
+    public String id;
     public String titulo;
     public String diretor;
-    public String dataLancamento;
+    public long anoLancamento;
     public String genero;
 
     @Override
@@ -20,9 +20,10 @@ public class Filme {
 
     @Override
     public String toString() {
-        String impressao1 = "\n\tTítulo: " + this.titulo +
+        String impressao1 = "\n\tID: " + this.id + 
+                            "\n\tTítulo: " + this.titulo +
                             "\n\tDiretor(es): " + this.diretor +
-                            "\n\tData de lançamento: " + this.dataLancamento +
+                            "\n\tAno de lançamento: " + this.anoLancamento +
                             "\n\tGênero: " + this.genero;
         return impressao1;        
     }

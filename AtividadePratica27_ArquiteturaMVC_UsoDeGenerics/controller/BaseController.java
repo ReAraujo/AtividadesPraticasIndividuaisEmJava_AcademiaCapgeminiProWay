@@ -9,6 +9,10 @@ public class BaseController<T> {
         this.dados = new ArrayList<T>();
     }
 
+    public int tamanhoLista(){
+        return this.dados.size();
+    }
+
     // CRUD: 
     // CREATE 
     public void create(T obj){
