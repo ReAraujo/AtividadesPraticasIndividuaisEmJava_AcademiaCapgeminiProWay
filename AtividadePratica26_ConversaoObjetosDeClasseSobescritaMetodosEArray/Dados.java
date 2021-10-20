@@ -11,11 +11,11 @@ public class Dados {
     public String adicionar(Object obj){
         String mensagem = "Dados salvos com sucesso!";
         
-        if(posicaoAtual < dados.length){
-            dados[posicaoAtual] = obj;
+        if(posicaoAtual < this.dados.length){
+            this.dados[posicaoAtual] = obj;
             posicaoAtual++;
         }else {
-            tamanhoAtual = tamanhoAtual+5;
+            tamanhoAtual = tamanhoAtual + 5;
             Object[] dados1 = new Object[tamanhoAtual];
 
             for (int i = 0; i < dados.length; i++) {

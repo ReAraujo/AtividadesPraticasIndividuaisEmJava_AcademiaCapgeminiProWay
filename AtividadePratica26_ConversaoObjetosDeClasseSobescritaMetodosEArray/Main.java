@@ -39,6 +39,11 @@ public class Main {
         dados.adicionar(pessoa1);
         dados.adicionar(aluno1);
 
+        // Impressão do método adicionar da classe Dados
+        System.out.println(dados.adicionar(pessoa1));
+        System.out.println(dados.adicionar(aluno1));
+
+        // Criação do novo objeto pessoa com os mesmos valores de atributos da pessoa1
         Pessoa pessoa2 = new Pessoa();
         pessoa2.nome = "Fulana";
         pessoa2.sobrenome = "de Ciclana";
@@ -60,6 +65,8 @@ public class Main {
 
         // Imprimindo novamente o tamanho da lista para verificar a remoção do objeto pessoa2
         System.out.println(dados.tamanhoLista());
+
+        System.out.println(dados.adicionar(pessoa1));
 
 
 
