@@ -23,7 +23,7 @@ public class BaseController<T> {
         this.dados.add(obj);    
     }
     // READ
-    public ArrayList<T> reaf(){
+    public ArrayList<T> read(){
         return this.dados;
     }
     // UPDATE
