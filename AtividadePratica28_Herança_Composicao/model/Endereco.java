@@ -11,4 +11,15 @@ public class Endereco extends Base {
     public String pais;
 
     
+    @Override
+    public String toString() {
+        String retorno2 =   "\n| CEP: " + this.cep + 
+                            "\n| Logradouro: " + this.logradouro +" " +  "Numero: " + this.numero + " " + "Completo: " + this.complemento + 
+                            "\n| Complemento: " + this.complemento + 
+                            "\n| Bairro: " + this.bairro + 
+                            "\n| Cidade: " + this.cidade + " " + "| Estado: " + this.estado + 
+                            "\n| País: " + this.pais;
+        return super.toString() + retorno2;
+    }
+    
 }

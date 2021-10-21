@@ -16,5 +16,11 @@ public class Base{
         return false;
     }
 
+    @Override
+    public String toString() {
+        String retorno1 = "\n| ID: " + Integer.toString(this.id);
+        return retorno1;
+    }
+
 
 }
