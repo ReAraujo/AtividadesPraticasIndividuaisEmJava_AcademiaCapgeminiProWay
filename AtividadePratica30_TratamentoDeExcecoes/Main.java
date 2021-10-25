@@ -10,46 +10,61 @@ public class Main {
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         Calculadora calc = new Calculadora();
-        cabecalho();
-        imprime_menu();
-        int opcao = ler_opcao_menu();
+
         int n1 = 0;
         int n2 = 0;
         int resultado = 0;
- 
-        switch(opcao){
-            case 1: 
-                    System.out.println("Opção escolhida: Somar");
-                    n1 = ler_numero_inteiro("\nDigite o primeiro número: ");
-                    n2 = ler_numero_inteiro("Digite o segundo número: ");
-                    resultado = calc.somar(n1, n2);
-                    System.out.printf("O resultado da somatória é: %d", resultado);
-            break;
-            case 2: System.out.println("Opção escolhida: Subtrair");
-                    n1 = ler_numero_inteiro("\nDigite o primeiro número: ");
-                    n2 = ler_numero_inteiro("Digite o segundo número: ");
-                    resultado = calc.subtrair(n1, n2);
-                    System.out.printf("O resultado da subtração é: %d", resultado);
-            break;
-            case 3: System.out.println("Opção escolhida: Multiplicar");
-                    n1 = ler_numero_inteiro("\nDigite o primeiro número: ");
-                    n2 = ler_numero_inteiro("Digite o segundo número: ");
-                    resultado = calc.multiplicar(n1, n2);
-                    System.out.printf("O resultado da multiplicação é: %d", resultado);
-            break;
-            case 4: System.out.println("Opção escolhida: Dividir");
-                    n1 = ler_numero_inteiro("Digite o primeiro número: ");
-                    valida_numero();   
+        boolean continua;
+        
+        do{
+            cabecalho();
+            imprime_menu();
+            int opcao = ler_opcao_menu();
 
-                    resultado = calc.dividir(n1, n2);
-                    System.out.printf("O resultado da divisão é: %d", resultado);
-            break;
-            case 0: System.out.println("Saindo do programa em 3.. 2.. 1.. Bye-bye!");
-            break;
+                switch(opcao){
+                    case 1: 
+                            System.out.println("Opção escolhida: Somar");
+                            n1 = ler_numero_inteiro("\nDigite o primeiro número: ");
+                            n2 = ler_numero_inteiro("Digite o segundo número: ");
+                            resultado = calc.somar(n1, n2);
+                            System.out.printf("O resultado da somatória é: %d", resultado);
+                    break;
+                    case 2: System.out.println("Opção escolhida: Subtrair");
+                            n1 = ler_numero_inteiro("\nDigite o primeiro número: ");
+                            n2 = ler_numero_inteiro("Digite o segundo número: ");
+                            resultado = calc.subtrair(n1, n2);
+                            System.out.printf("O resultado da subtração é: %d", resultado);
+                    break;
+                    case 3: System.out.println("Opção escolhida: Multiplicar");
+                            n1 = ler_numero_inteiro("\nDigite o primeiro número: ");
+                            n2 = ler_numero_inteiro("Digite o segundo número: ");
+                            resultado = calc.multiplicar(n1, n2);
+                            System.out.printf("O resultado da multiplicação é: %d", resultado);
+                    break;
+                    case 4: System.out.println("Opção escolhida: Dividir");
+                            n1 = ler_numero_inteiro("Digite o primeiro número: ");
+                            boolean valida = true;
+                            do{
+                                try{
+                                    n2 = ler_numero_inteiro("Digite o segundo número: ");
+                                    valida_numero(n2);
+                                    valida = true; 
+                                }catch (RuntimeException ex) {
+                                    System.out.println(ex.getMessage() + " Digite novamente, por favor.");
+                                    valida = false;
+                                }    
+                            }while(!valida);
 
-        }
+                            resultado = calc.dividir(n1, n2);
+                            System.out.printf("O resultado da divisão é: %d", resultado);
+                    break;
+                    case 0: System.out.println("Saindo do programa em 3.. 2.. 1.. Bye-bye!");
+                    break;
+                }
 
-    }
+            continua = retorna_ao_menu();
+        }while(continua);
+    }    
 
     static void cabecalho(){
         System.out.println("|====================    Atividade Prática 30    ====================|");
@@ -87,12 +102,12 @@ public class Main {
         return opcaoEscolhida;
     }
 
-    static boolean retorna_menu(){
+    static boolean retorna_ao_menu(){
         boolean resposta = false;
         char resposta_continua;
         
         do{
-            System.out.println("\n\nDeseja voltar ao menu? (S/N)");
+            System.out.print("\n\nDeseja voltar ao menu? (S = sim/N = não). Digite: ");
                 resposta_continua = sc.nextLine().toUpperCase().charAt(0);
                 
                 if(resposta_continua == 'S'){
@@ -117,7 +132,8 @@ public class Main {
         do{
             System.out.print(mensagem);
             try {
-                numero = Integer.parseInt(sc.nextLine());     
+                numero = Integer.parseInt(sc.nextLine()); 
+                valida = true;    
             }
             catch (NumberFormatException ex) {
                 System.out.println("Informação digitada inválida! Digite novamente, por favor.");
@@ -128,32 +144,10 @@ public class Main {
         return numero;
     }
 
-    static int valida_numero(){
-        int numero = 0;
-        boolean valida = true;
-
-        do{
-            try {
-                numero = ler_numero_inteiro("Digite o segundo número: ");
-                
-                if(numero == 0){
-                    throw new IllegalArgumentException("Número digitado é inválido!");
-                }
-
-                if(numero == 0){
-                    throw new ArithmeticException("Número digitado é inválido!");
-                }
-
-            } catch (IllegalArgumentException ex) {
-                System.out.println(ex.getMessage() + "Digite novamente, por favor.");
-                valida = false;
-            } catch (ArithmeticException ex){
-                System.out.println(ex.getMessage() + "Digite novamente, por favor.");
-                valida = false;
-            }
-        }while(!valida);
-
-        return numero;
+    static void valida_numero(int n2){              
+        if(n2 == 0){
+            throw new RuntimeException("Número digitado é inválido!");
+        }       
     }
 
 
