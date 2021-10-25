@@ -1,6 +1,6 @@
 package model;
 
-public class Endereco extends Base {
+public class Endereco{
     public String cep;
     public String logradouro;
     public String numero;
@@ -19,7 +19,7 @@ public class Endereco extends Base {
                             "\n| Bairro: " + this.bairro + 
                             "\n| Cidade: " + this.cidade + " " + "| Estado: " + this.estado + 
                             "\n| País: " + this.pais;
-        return super.toString() + retorno2;
+        return retorno2;
     }
     
 }

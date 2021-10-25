@@ -1,6 +1,6 @@
 package model;
 
-public class Base{
+public class Base extends Endereco {
     public int id;
 
 
@@ -19,7 +19,7 @@ public class Base{
     @Override
     public String toString() {
         String retorno1 = "\n| ID: " + Integer.toString(this.id);
-        return retorno1;
+        return retorno1 + super.toString();
     }
 
 

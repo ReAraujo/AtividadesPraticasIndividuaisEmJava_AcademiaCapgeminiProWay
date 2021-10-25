@@ -36,6 +36,23 @@ public class Main {
     end1.estado = "Estadolândia";
     end1.pais = "Paisolândia";
 
+    PessoaFisica pf2 = new PessoaFisica();
+    pf2.id = 0001;
+    pf2.nomeCompleto = "Fulana de Ciclana";
+    pf2.cpf = "123.456.789-89";
+    pf1.rg = "5524019612";
+    pf1.dataNascimento = "07/07/1980";
+
+    Endereco end3 = new Endereco();
+    end3.cep = "56.604-78";
+    end3.logradouro = "Rua da Ciclana";
+    end3.numero = "107";
+    end3.complemento = "Apartamento A-405";
+    end3.bairro = "Bairro da Ciclana";
+    end3.cidade = "Cidadolândia";
+    end3.estado = "Estadolândia";
+    end3.pais = "Paisolândia";
+
     PessoaJuridica pj1 = new PessoaJuridica();
     pj1.id = 0002;
     pj1.nomeFantasia = "Mia's Company";
@@ -58,6 +75,7 @@ public class Main {
     pj1.enderecoComercial = end2;
 
     pessoaFisicaController.create(pf1);
+    pessoaFisicaController.create(pf2);    
     pessoaJuridicaController.create(pj1);
 
     System.out.println(pessoaFisicaController.read());
