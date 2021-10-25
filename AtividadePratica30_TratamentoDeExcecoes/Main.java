@@ -127,7 +127,7 @@ public class Main {
 
     private static int ler_numero_inteiro(String mensagem){        
         int numero = 0;
-        boolean valida = true;
+        boolean valida;
 
         do{
             System.out.print(mensagem);
