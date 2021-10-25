@@ -66,12 +66,12 @@ public class Main {
         }while(continua);
     }    
 
-    static void cabecalho(){
+    private static void cabecalho(){
         System.out.println("|====================    Atividade Prática 30    ====================|");
         System.out.println("|=====   Seja bem-vindo(a) ao Programa de Calculadora Básica    =====|");
     }
 
-    static void imprime_menu(){
+    private static void imprime_menu(){
         System.out.println(" Escolha uma opção do menu abaixo: ");
         System.out.println("\t1 - Somar");
         System.out.println("\t2 - Subtrair");
@@ -80,7 +80,7 @@ public class Main {
         System.out.println("\t0 - Sair do programa");
     }
 
-    static int ler_opcao_menu(){
+    private static int ler_opcao_menu(){
         int opcaoEscolhida = 0;
         do{
             try {
@@ -102,7 +102,7 @@ public class Main {
         return opcaoEscolhida;
     }
 
-    static boolean retorna_ao_menu(){
+    private static boolean retorna_ao_menu(){
         boolean resposta = false;
         char resposta_continua;
         
@@ -125,7 +125,7 @@ public class Main {
         return resposta;    
     }
 
-    static int ler_numero_inteiro(String mensagem){        
+    private static int ler_numero_inteiro(String mensagem){        
         int numero = 0;
         boolean valida = true;
 
@@ -144,7 +144,7 @@ public class Main {
         return numero;
     }
 
-    static void valida_numero(int n2){              
+    private static void valida_numero(int n2){              
         if(n2 == 0){
             throw new RuntimeException("Número digitado é inválido!");
         }       
