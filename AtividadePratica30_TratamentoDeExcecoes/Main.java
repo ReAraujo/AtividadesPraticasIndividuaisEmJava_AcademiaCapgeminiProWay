@@ -90,11 +90,7 @@ public class Main {
                 if(opcaoEscolhida < 0 || opcaoEscolhida >= 5){
                     throw new IllegalArgumentException("A informação digitada é inválida! A opção escolhida deverá estar entre as opções 0 e 4!");
                 }
-            }
-            catch (NumberFormatException ex) {
-                System.out.println(ex.getMessage() + " Por favor, digite novamente.");
-            }
-            catch (IllegalArgumentException ex){
+            }catch (IllegalArgumentException ex){
                 System.out.println(ex.getMessage() + " Por favor, digite novamente.");
             }
         }while(opcaoEscolhida <= -1 || opcaoEscolhida >= 5);    
