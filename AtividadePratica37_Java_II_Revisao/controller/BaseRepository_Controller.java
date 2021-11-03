@@ -3,7 +3,7 @@ package controller;
 import java.util.ArrayList;
 import model.Prato;
 
-public class BaseRepository_Controller<P> extends Prato {
+public abstract class BaseRepository_Controller<P> extends Prato {
     private ArrayList<P> pratos;
 
     public BaseRepository_Controller() {
