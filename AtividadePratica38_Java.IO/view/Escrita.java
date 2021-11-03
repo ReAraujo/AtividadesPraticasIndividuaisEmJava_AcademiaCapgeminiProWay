@@ -1,3 +1,9 @@
+/* _ Crie uma outra classe que contenha a estrutura de escrita em um arquivo de texto, 
+     o arquivo deve estar salvo em uma pasta de nome dados. 
+     A escrita de conter um fluxo de saída para o arquivo, um forma de escrita no fluxo e 
+     um buffer de escrita. 
+     Com o buffer, escreva algumas linhas dentro do arquivo texto.
+*/
 package view;
 
 import java.io.BufferedWriter;
