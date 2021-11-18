@@ -6,12 +6,12 @@
    _  A view deve testar as operações de CRUD para cada controller 
       (Utilize dados fixo, sem entrada do usuário).
 */
-package view;
+package AtividadePratica27_ArquiteturaMVC_UsoDeGenerics.view;
 
-import controller.FilmeController;
-import controller.SerieController;
-import model.Filme;
-import model.Serie;
+import AtividadePratica27_ArquiteturaMVC_UsoDeGenerics.controller.FilmeController;
+import AtividadePratica27_ArquiteturaMVC_UsoDeGenerics.controller.SerieController;
+import AtividadePratica27_ArquiteturaMVC_UsoDeGenerics.model.Filme;
+import AtividadePratica27_ArquiteturaMVC_UsoDeGenerics.model.Serie;
 
 public class Main {
     public static void main(String[] args) {
@@ -88,17 +88,5 @@ public class Main {
 
         System.out.println("-------------------- Séries --------------------");
         System.out.println(serieController.read());
-
-
-
-
-
-
-
-
-
-
-
     }
-    
 }

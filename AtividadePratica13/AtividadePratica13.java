@@ -10,18 +10,14 @@ public class AtividadePratica13 {
         cabecalho();
 
         soma1 = somar1();
-
         soma2 = somar2();
-
         soma3 = somar3();
-
         soma4 = somar4();
-
+        
         mediana(CalculoMedia(soma1, soma2, soma3, soma4));
         
         sc.close();
         
-
     }
     private static void cabecalho() {
         System.out.println("=============== Calculo de Media ==============");

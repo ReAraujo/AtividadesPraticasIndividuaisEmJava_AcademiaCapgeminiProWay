@@ -38,5 +38,4 @@ public class AtividadePratica10_salario {
 
         System.out.println("======================== Fim =======================");
     }
-    
 }

@@ -1,4 +1,4 @@
-package model;
+package AtividadePratica37_Java_II_Revisao.model;
 
 public abstract class Base {
     public String id;
@@ -14,13 +14,9 @@ public abstract class Base {
         return false;
     }
 
-
     @Override
     public String toString() {
         return "\n\tID: " + this.id;
     }
-
-
-
 
 }

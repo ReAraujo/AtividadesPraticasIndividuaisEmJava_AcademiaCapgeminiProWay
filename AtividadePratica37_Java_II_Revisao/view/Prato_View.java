@@ -1,7 +1,7 @@
-package view;
+package AtividadePratica37_Java_II_Revisao.view;
 
-import controller.Prato_Controller;
-import model.Prato;
+import AtividadePratica37_Java_II_Revisao.controller.Prato_Controller;
+import AtividadePratica37_Java_II_Revisao.model.Prato;
 
 public class Prato_View {
     public static void main(String[] args) {
@@ -13,10 +13,8 @@ public class Prato_View {
         prato1.corPrato = "Preto";
         prato1.materialPrato = "Vidro temperado";
 
-
         pratoController.create(prato1);
         System.out.println(pratoController.read());
 
     }
-    
 }

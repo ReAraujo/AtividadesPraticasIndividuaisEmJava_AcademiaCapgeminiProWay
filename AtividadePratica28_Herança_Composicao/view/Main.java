@@ -6,13 +6,13 @@
   _  A view deve testar as operações de CRUD para cada controller (Utilize dados fixo, sem entrada do usuário).
 */
 
-package view;
+package AtividadePratica28_Herança_Composicao.view;
 
-import controller.PessoaFisicaController;
-import controller.PessoaJuridicaController;
-import model.Endereco;
-import model.PessoaFisica;
-import model.PessoaJuridica;
+import AtividadePratica28_Herança_Composicao.controller.PessoaFisicaController;
+import AtividadePratica28_Herança_Composicao.controller.PessoaJuridicaController;
+import AtividadePratica28_Herança_Composicao.model.Endereco;
+import AtividadePratica28_Herança_Composicao.model.PessoaFisica;
+import AtividadePratica28_Herança_Composicao.model.PessoaJuridica;
 
 public class Main {
   public static void main(String[] args) {
@@ -79,14 +79,7 @@ public class Main {
     pessoaJuridicaController.create(pj1);
 
     System.out.println(pessoaFisicaController.read());
-    System.out.println(pessoaJuridicaController.read());
-    
-    
-
-
-
-
-
+    System.out.println(pessoaJuridicaController.read());  
   }
     
 }

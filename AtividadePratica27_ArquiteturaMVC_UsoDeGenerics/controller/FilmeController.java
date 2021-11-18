@@ -1,6 +1,6 @@
-package controller;
+package AtividadePratica27_ArquiteturaMVC_UsoDeGenerics.controller;
 
-import model.Filme;
+import AtividadePratica27_ArquiteturaMVC_UsoDeGenerics.model.Filme;
 
 public class FilmeController extends BaseController<Filme>{
     

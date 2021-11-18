@@ -1,4 +1,4 @@
-package controller;
+package AtividadePratica28_Herança_Composicao.controller;
 
 import java.util.ArrayList;
 
@@ -38,11 +38,4 @@ public class BaseController<T> {
     public void delete(T obj){
         this.dados.remove(obj);
     }
-
-
-
-
-
-
-
 }

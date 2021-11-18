@@ -1,4 +1,4 @@
-package model;
+package AtividadePratica31_TratamentoDeExcecoes.model;
 
 public class Base {
     public String id;

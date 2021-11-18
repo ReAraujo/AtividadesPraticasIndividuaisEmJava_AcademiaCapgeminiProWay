@@ -1,4 +1,4 @@
-package controller;
+package AtividadePratica27_ArquiteturaMVC_UsoDeGenerics.controller;
 
 import java.util.ArrayList;
 

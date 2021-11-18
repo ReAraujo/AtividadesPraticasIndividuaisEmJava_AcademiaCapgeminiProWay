@@ -1,7 +1,7 @@
-package controller;
+package AtividadePratica37_Java_II_Revisao.controller;
 
 import java.util.ArrayList;
-import model.Prato;
+import AtividadePratica37_Java_II_Revisao.model.Prato;
 
 public abstract class BaseRepository_Controller<P> extends Prato {
     private ArrayList<P> pratos;
@@ -38,7 +38,4 @@ public abstract class BaseRepository_Controller<P> extends Prato {
     public void delete(P obj){
         this.pratos.remove(obj);
     }
-
-
-
 }

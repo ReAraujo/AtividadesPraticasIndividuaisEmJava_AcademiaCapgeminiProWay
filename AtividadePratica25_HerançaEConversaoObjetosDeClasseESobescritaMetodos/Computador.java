@@ -1,3 +1,5 @@
+package AtividadePratica25_HerançaEConversaoObjetosDeClasseESobescritaMetodos;
+
 public class Computador{
     public String marca;
     public String memoriaRam;
@@ -12,6 +14,4 @@ public class Computador{
                "\n\tProcessador: " + this.processador + 
                "\n\tDisco rígido: " + this.discoRigido;
     }
-
-
 }

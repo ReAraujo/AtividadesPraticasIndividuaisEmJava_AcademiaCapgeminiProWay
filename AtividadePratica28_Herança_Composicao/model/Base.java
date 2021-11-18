@@ -1,8 +1,7 @@
-package model;
+package AtividadePratica28_Herança_Composicao.model;
 
 public class Base extends Endereco {
     public int id;
-
 
     @Override
     public boolean equals(Object obj) {
@@ -12,7 +11,6 @@ public class Base extends Endereco {
                 return true;
             }
         }
-
         return false;
     }
 
@@ -21,6 +19,4 @@ public class Base extends Endereco {
         String retorno1 = "\n| ID: " + Integer.toString(this.id);
         return retorno1 + super.toString();
     }
-
-
 }

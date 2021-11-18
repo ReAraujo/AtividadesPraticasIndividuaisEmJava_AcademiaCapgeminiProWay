@@ -1,3 +1,5 @@
+package AtividadePratica24_HerançaEConversaoObjetosDeClasse;
+
 public class Veiculo {
     public String marca;
     public String modelo;
@@ -10,7 +12,4 @@ public class Veiculo {
             "\nModelo: " + this.modelo + 
             "\nNumeração Placa: " + this.placa;
     }
-
-
-
 }

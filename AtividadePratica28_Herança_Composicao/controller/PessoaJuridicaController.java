@@ -1,6 +1,6 @@
-package controller;
+package AtividadePratica28_Herança_Composicao.controller;
 
-import model.PessoaJuridica;
+import AtividadePratica28_Herança_Composicao.model.PessoaJuridica;
 
 public class PessoaJuridicaController extends BaseController<PessoaJuridica> {
     

@@ -1,3 +1,5 @@
+package AtividadePratica26_ConversaoObjetosDeClasseSobrescritaMetodosEArray;
+
 public class Pessoa{
     public String nome;
     public String sobrenome;
@@ -22,7 +24,4 @@ public class Pessoa{
                "\n\tNome completo: " + this.nome + " " + this.sobrenome +
                "\n\tIdade: " + this.idade;
     }
-
-
-
 }

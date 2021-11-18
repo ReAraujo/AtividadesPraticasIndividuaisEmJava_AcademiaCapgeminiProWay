@@ -1,8 +1,9 @@
+package AtividadePratica26_ConversaoObjetosDeClasseSobrescritaMetodosEArray;
+
 public class Aluno extends Pessoa {
     public String matricula;
     public String turma;
     public String curso;
-
 
     @Override
     public boolean equals(Object obj) {
@@ -25,6 +26,4 @@ public class Aluno extends Pessoa {
                "\n\tTurma: " + this.turma +
                "\n\tCurso: " + this.curso;
     }
-
-
 }

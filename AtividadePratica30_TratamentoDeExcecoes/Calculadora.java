@@ -1,3 +1,5 @@
+package AtividadePratica30_TratamentoDeExcecoes;
+
 public class Calculadora {
 
     static int somar(int n1, int n2){

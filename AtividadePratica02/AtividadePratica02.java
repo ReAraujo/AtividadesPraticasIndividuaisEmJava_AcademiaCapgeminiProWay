@@ -1,3 +1,5 @@
+package AtividadePratica02;
+
 import java.util.Scanner;
 
 public class AtividadePratica02 {

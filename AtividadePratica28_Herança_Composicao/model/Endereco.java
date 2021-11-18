@@ -1,4 +1,4 @@
-package model;
+package AtividadePratica28_Herança_Composicao.model;
 
 public class Endereco{
     public String cep;

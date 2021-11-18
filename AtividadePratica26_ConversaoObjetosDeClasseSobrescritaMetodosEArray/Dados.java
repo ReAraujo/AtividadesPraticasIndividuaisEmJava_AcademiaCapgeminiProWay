@@ -1,8 +1,9 @@
+package AtividadePratica26_ConversaoObjetosDeClasseSobrescritaMetodosEArray;
+
 public class Dados {
     private Object[] dados;
     public int posicaoAtual = 0;
     public int tamanhoAtual = 5;
-
 
     public Dados(){
         this.dados = new Object[tamanhoAtual];
@@ -58,6 +59,4 @@ public class Dados {
 
         return false;
     }
-
-    
 }

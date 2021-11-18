@@ -1,3 +1,5 @@
+package AtividadePratica24_HerançaEConversaoObjetosDeClasse;
+
 public class Carro extends Veiculo {
     public int numeroPortas;
     public int capacidadePortaMalas;
@@ -11,6 +13,4 @@ public class Carro extends Veiculo {
             "\nNúmero de Portas: " + this.numeroPortas + 
             "\nCapacidade do Porta-malas: " + this.capacidadePortaMalas;
     }
-
-    
 }

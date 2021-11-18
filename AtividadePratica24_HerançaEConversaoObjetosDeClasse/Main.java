@@ -10,6 +10,8 @@
   _  Imprima todos dos dados do objeto de Veículo convertido. - OK!
   _  Imprima todos dos dados do objeto de Carro convertido. - OK!
 */
+package AtividadePratica24_HerançaEConversaoObjetosDeClasse;
+
 public class Main {
     public static void main(String[] args) {
         Veiculo veiculo1 = new Veiculo();
@@ -38,5 +40,4 @@ public class Main {
     public static void imprimir(Object obj){
         System.out.println(obj.toString());
     }
-    
 }

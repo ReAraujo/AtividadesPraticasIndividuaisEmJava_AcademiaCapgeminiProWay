@@ -1,4 +1,4 @@
-package model;
+package AtividadePratica27_ArquiteturaMVC_UsoDeGenerics.model;
 
 public class Filme {
     public String id;
@@ -26,9 +26,5 @@ public class Filme {
                             "\n\tAno de lançamento: " + this.anoLancamento +
                             "\n\tGênero: " + this.genero;
         return impressao1;        
-    }
-
-
-
-    
+    }    
 }

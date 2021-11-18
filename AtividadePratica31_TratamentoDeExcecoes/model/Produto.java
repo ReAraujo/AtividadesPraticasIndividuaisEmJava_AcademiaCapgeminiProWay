@@ -1,4 +1,4 @@
-package model;
+package AtividadePratica31_TratamentoDeExcecoes.model;
 
 public class Produto extends Base { // Herança
     public CategoriaProduto categoriaProduto; // Composição 

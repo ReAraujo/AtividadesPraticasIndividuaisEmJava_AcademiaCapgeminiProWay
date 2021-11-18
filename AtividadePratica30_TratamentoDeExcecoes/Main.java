@@ -4,6 +4,8 @@
   _  O sistema deve possuir um tratamento de exceção durante a leitura dos dados para evitar que o usuário insira 
      algo diferente de números inteiros tanto para as operação quanto para o menu. 
 */
+package AtividadePratica30_TratamentoDeExcecoes;
+
 import java.util.Scanner;
 
 public class Main {
@@ -145,7 +147,4 @@ public class Main {
             throw new RuntimeException("Número digitado é inválido!");
         }       
     }
-
-
-
 }

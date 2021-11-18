@@ -1,4 +1,4 @@
-package model;
+package AtividadePratica28_Herança_Composicao.model;
 
 public class PessoaFisica extends Pessoa {
     public String nomeCompleto;

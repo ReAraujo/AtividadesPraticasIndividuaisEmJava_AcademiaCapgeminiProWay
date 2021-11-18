@@ -1,4 +1,4 @@
-package model;
+package AtividadePratica27_ArquiteturaMVC_UsoDeGenerics.model;
 
 public class Serie extends Filme{
     public String emissora;
@@ -12,7 +12,4 @@ public class Serie extends Filme{
                             "\n\tQuantidade de Episódios: " + this.quantidadeDeEpisodios  + "\n";
         return super.toString() + impressao2;
     }
-
-    
-    
 }

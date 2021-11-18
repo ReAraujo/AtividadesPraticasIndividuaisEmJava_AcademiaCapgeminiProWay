@@ -14,6 +14,8 @@
   _  Imprima todos dos dados do objeto de Notebook convertido através do toString.
   _  Imprima todos dos dados do objeto de Desktop convertido através do toString.
 */
+package AtividadePratica25_HerançaEConversaoObjetosDeClasseESobescritaMetodos;
+
 public class Main {
     public static void main(String[] args) {
         Computador computador1 = new Computador();

@@ -1,12 +1,10 @@
-package model;
+package AtividadePratica37_Java_II_Revisao.model;
 
 public class Prato extends Base{
     public String profundidadePrato;
     public String formatoPrato;
     public String corPrato;
     public String materialPrato;
-
-
 
     @Override
     public String toString() {
@@ -17,7 +15,5 @@ public class Prato extends Base{
                             "\n\tCor: " + this.corPrato +
                             "\n\tMaterial: " + this.materialPrato;
         return impressao;
-    }
-
-    
+    }    
 }

@@ -67,5 +67,4 @@ public class AtividadePratica11_BradescoFinanciamentos {
 
     sc.close();    
     }
-
 }

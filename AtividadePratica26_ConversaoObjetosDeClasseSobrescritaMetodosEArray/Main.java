@@ -17,6 +17,7 @@
   _  Verifique se o segundo objeto de pessoa já está salvo no array,utilizando o método da classe Dados. - OK
   _  Remova o aluno do array, utilizando o método da classe Dados. - OK
 */
+package AtividadePratica26_ConversaoObjetosDeClasseSobrescritaMetodosEArray;
 
 public class Main {
     public static void main(String[] args) {
@@ -62,18 +63,5 @@ public class Main {
 
         // Imprimindo novamente o tamanho da lista para verificar a remoção do objeto pessoa2
         System.out.println(dados.tamanhoLista());
-
-
-
-
-
-
-
-
-
-
-
-    }
-
-    
+    }    
 }
