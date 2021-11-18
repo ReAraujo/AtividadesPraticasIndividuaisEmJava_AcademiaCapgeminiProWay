@@ -7,7 +7,12 @@
    _  Na classe3, altere todos os produtos para a mesma categoria e exiba a quantidade de linhas afetadas.
 */
 
-public class View_Delete {
-    
+public class View_Classe3_Update {
+   public static void main(String[] args) {
+      
+
+
+      
+   }
     
 }
