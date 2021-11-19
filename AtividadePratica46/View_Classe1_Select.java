@@ -25,7 +25,7 @@ public class View_Classe1_Select {
             String user = "postgres";
             String pwd = "123789";
             String connectionString = String.format("%s:%s://%s:%d/%s", driverType, driverName, host, port, database);
-            String sql = "SELECT * from Categoria";
+            String sql = "SELECT * FROM Categoria";
 
             // Conectando no Banco de Dados
             Connection conn = DriverManager.getConnection(connectionString, user, pwd);
