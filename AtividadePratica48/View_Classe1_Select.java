@@ -7,9 +7,9 @@
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class View_Classe1_Select {
     public static void main(String[] args) {
@@ -27,14 +27,13 @@ public class View_Classe1_Select {
             // Conectando no Banco de Dados
             Connection conn = DriverManager.getConnection(connectionString, user, pwd);
 
-            // Statement = Executes the given SQL statement (comando SQL)
-            Statement statement = conn.createStatement();
-            statement.execute(sql);
+            PreparedStatement prepStatement = conn.prepareStatement(sql);
+            prepStatement.execute();
 
             // Result = Retorno da consulta
-            ResultSet result = statement.getResultSet();
+            ResultSet result = prepStatement.getResultSet();
 
-            // Imprimindo o resultado de Result (retorno)
+            // Imprimindo o resultado 
             while (result.next()) { 
                 int id = result.getInt("id");
                 String nome = result.getString("nome");
