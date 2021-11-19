@@ -31,6 +31,7 @@ public class View_Classe2_Insert {
             Connection conn = DriverManager.getConnection(connectionString, user, pwd);
 
             // Statement = Executes the given SQL statement (comando SQL)
+            // statement.RETURN_GENERATED_KEYS = Constante -> propriedade que armazenará internamente as Keys que foram retornadas
             Statement statement = conn.createStatement();
             statement.execute(sql, statement.RETURN_GENERATED_KEYS);
 
