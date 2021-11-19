@@ -33,7 +33,7 @@ public class View_Classe2_Insert {
             // Statement = Executes the given SQL statement (comando SQL)
             // statement.RETURN_GENERATED_KEYS = Constante -> propriedade que armazenará internamente as Keys que foram retornadas
             Statement statement = conn.createStatement();
-            statement.execute(sql, statement.RETURN_GENERATED_KEYS);
+            statement.execute(sql, Statement.RETURN_GENERATED_KEYS);
 
             // Retorno da consulta - Retorna o conjunto de IDs que foram gerados
             ResultSet retornoIDs = statement.getGeneratedKeys();
@@ -43,7 +43,6 @@ public class View_Classe2_Insert {
                 int id = retornoIDs.getInt(1);
                 System.out.println(id);
             }
-
             // Fechando a conexão 
             conn.close();
 
