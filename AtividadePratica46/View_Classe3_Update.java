@@ -10,7 +10,6 @@
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -25,32 +24,25 @@ public class View_Classe3_Update {
          String user = "postgres";
          String pwd = "123789";
          String connectionString = String.format("%s:%s://%s:%d/%s", driverType, driverName, host, port, database);
+         String sql = "UPDATE Categoria SET nome = 'Teste3' where nome = 'Teste1'";
 
          // Conectando no Banco de Dados
          Connection conn = DriverManager.getConnection(connectionString, user, pwd);
 
          // Statement = Executes the given SQL statement (comando SQL)
          Statement statement = conn.createStatement();
-         statement.execute("SELECT * from Categoria");
+         statement.execute(sql);
 
-         // Result = Retorno da consulta
-         ResultSet result = statement.getResultSet();
-
-         // Imprimindo o resultado de Result (retorno)
-         while (result.next()) { 
-             int id = result.getInt("id");
-             String nome = result.getString("nome");
-             String descricao = result.getString("descricao");
-             System.out.printf("|ID: %d - |Nome: %s - |Descrição: %s \n", id, nome, descricao);            
-         }
+         // Verificando quantas linhas foram afetadas pelo método UPDATE
+         int linhasAfetadas = statement.getUpdateCount();
+         System.out.println(linhasAfetadas);
 
          // Fechando a conexão 
          conn.close();
 
      } catch (SQLException e) {
          System.out.println("Desculpe, não foi possível conectar.");
-     }     
-
-   }
+     }
     
+   }
 }
