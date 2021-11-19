@@ -24,8 +24,8 @@ public class View_Classe2_Insert {
             String database = "postgres";
             String user = "postgres";
             String pwd = "123789";
-            String sql = "INSERT INTO Categoria (nome, descricao) values ('Teste1', 'Teste2')";
             String connectionString = String.format("%s:%s://%s:%d/%s", driverType, driverName, host, port, database);
+            String sql = "INSERT INTO Categoria (nome, descricao) values ('Teste1', 'Teste2')";
 
             // Conectando no Banco de Dados
             Connection conn = DriverManager.getConnection(connectionString, user, pwd);
