@@ -7,8 +7,8 @@
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class View_Classe3_Update {
    public static void main(String[] args) {
@@ -21,19 +21,24 @@ public class View_Classe3_Update {
          String user = "postgres";
          String pwd = "123789";
          String connectionString = String.format("%s:%s://%s:%d/%s", driverType, driverName, host, port, database);
-         String sql1 = "UPDATE Categoria SET nome = 'Softwares' where nome = 'Componentes de Hardware'";
-         String sql2 = "UPDATE Categoria SET nome = 'Cabos e utilitários' where nome = 'Móveis de Escritório'";
+         String sql = "UPDATE Categoria SET nome = ? where id = ?";
 
          // Conectando no Banco de Dados
          Connection conn = DriverManager.getConnection(connectionString, user, pwd);
 
-         // Statement = Executes the given SQL statement (comando SQL)
-         Statement statement = conn.createStatement();
-         statement.execute(sql1);
-         statement.execute(sql2);
+         // Query SQL
+         PreparedStatement prepStatement = conn.prepareStatement(sql);
+
+         // Recebendo os parâmetros 'id' e 'nome' através de variáveis
+         int id = 3;
+         String nome = "Nome da Categoria a ser alterada";
+         prepStatement.setInt(2, id);
+         prepStatement.setString(1, nome);
+
+         prepStatement.execute();
 
          // Verificando quantas linhas foram afetadas pelo método UPDATE
-         int linhasAfetadas = statement.getUpdateCount();
+         int linhasAfetadas = prepStatement.getUpdateCount();
          System.out.println(linhasAfetadas);
 
          // Fechando a conexão 
