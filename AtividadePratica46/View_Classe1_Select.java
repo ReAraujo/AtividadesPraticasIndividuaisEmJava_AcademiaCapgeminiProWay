@@ -24,6 +24,7 @@ public class View_Classe1_Select {
             String database = "postgres";
             String user = "postgres";
             String pwd = "123789";
+            String sql = "SELECT * from Categoria";
             String connectionString = String.format("%s:%s://%s:%d/%s", driverType, driverName, host, port, database);
 
             // Conectando no Banco de Dados
@@ -31,7 +32,7 @@ public class View_Classe1_Select {
 
             // Statement = Executes the given SQL statement (comando SQL)
             Statement statement = conn.createStatement();
-            statement.execute("SELECT * from Categoria");
+            statement.execute(sql);
 
             // Result = Retorno da consulta
             ResultSet result = statement.getResultSet();
@@ -43,7 +44,7 @@ public class View_Classe1_Select {
                 String descricao = result.getString("descricao");
                 System.out.printf("|ID: %d - |Nome: %s - |Descrição: %s \n", id, nome, descricao);            
             }
-            
+
             // Fechando a conexão 
             conn.close();
 
