@@ -24,6 +24,7 @@ public class View_Classe2_Insert {
             String database = "postgres";
             String user = "postgres";
             String pwd = "123789";
+            String sql = "INSERT INTO Categoria (nome, descricao) values ('Teste1', 'Teste2')";
             String connectionString = String.format("%s:%s://%s:%d/%s", driverType, driverName, host, port, database);
 
             // Conectando no Banco de Dados
@@ -31,17 +32,15 @@ public class View_Classe2_Insert {
 
             // Statement = Executes the given SQL statement (comando SQL)
             Statement statement = conn.createStatement();
-            statement.execute("SELECT * from Categoria");
+            statement.execute(sql, statement.RETURN_GENERATED_KEYS);
 
-            // Result = Retorno da consulta
-            ResultSet result = statement.getResultSet();
+            // Retorno da consulta - Retorna o conjunto de IDs que foram gerados
+            ResultSet retornoIDs = statement.getGeneratedKeys();
 
             // Imprimindo o resultado de Result (retorno)
-            while (result.next()) { 
-                int id = result.getInt("id");
-                String nome = result.getString("nome");
-                String descricao = result.getString("descricao");
-                System.out.printf("|ID: %d - |Nome: %s - |Descrição: %s \n", id, nome, descricao);            
+            while (retornoIDs.next()) { 
+                int id = retornoIDs.getInt(1);
+                System.out.println(id);
             }
 
             // Fechando a conexão 
@@ -49,7 +48,7 @@ public class View_Classe2_Insert {
 
         } catch (SQLException e) {
             System.out.println("Desculpe, não foi possível conectar.");
-        }          
+        }
     }
     
 }
