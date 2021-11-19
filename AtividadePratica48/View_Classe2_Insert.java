@@ -7,6 +7,7 @@
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -22,17 +23,24 @@ public class View_Classe2_Insert {
             String user = "postgres";
             String pwd = "123789";
             String connectionString = String.format("%s:%s://%s:%d/%s", driverType, driverName, host, port, database);
-            String sql = "INSERT INTO Categoria (nome, descricao) values ('Brindes', 'Brindes a serem enviados junto com o produto adquirido')";
-
+            String sql = "INSERT INTO Categoria (nome, descricao) values (?, ?)";
+            
             // Conectando no Banco de Dados
             Connection conn = DriverManager.getConnection(connectionString, user, pwd);
+            
+            // Query SQL
+            PreparedStatement prepStatement = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            
+            // Recebendo os parâmetros 'nome' e 'descrição' através de variáveis
+            String nome = "Nome da Categoria";
+            String descricao = "Descrição da Categoria";
+            prepStatement.setString(1, nome);
+            prepStatement.setString(2, descricao);
 
-            // Statement = Executes the given SQL statement (comando SQL)
-            Statement statement = conn.createStatement();
-            statement.execute(sql, Statement.RETURN_GENERATED_KEYS);
+            prepStatement.execute();
 
             // Retorno da consulta - Retorna o conjunto de IDs que foram gerados
-            ResultSet retornoIDs = statement.getGeneratedKeys();
+            ResultSet retornoIDs = prepStatement.getGeneratedKeys();
 
             // Imprimindo o resultado de Result (retorno)
             while (retornoIDs.next()) { 
