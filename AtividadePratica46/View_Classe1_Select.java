@@ -43,7 +43,7 @@ public class View_Classe1_Select {
                 String descricao = result.getString("descricao");
                 System.out.printf("|ID: %d - |Nome: %s - |Descrição: %s \n", id, nome, descricao);            
             }
-
+            
             // Fechando a conexão 
             conn.close();
 
