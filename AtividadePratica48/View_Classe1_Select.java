@@ -22,12 +22,11 @@ public class View_Classe1_Select {
             String user = "postgres";
             String pwd = "123789";
             String connectionString = String.format("%s:%s://%s:%d/%s", driverType, driverName, host, port, database);
-            String sql = "SELECT id, nome FROM Categoria";
 
             // Conectando no Banco de Dados
             Connection conn = DriverManager.getConnection(connectionString, user, pwd);
 
-            PreparedStatement prepStatement = conn.prepareStatement(sql);
+            PreparedStatement prepStatement = conn.prepareStatement("SELECT id, nome FROM Categoria");
             prepStatement.execute();
 
             // Result = Retorno da consulta
