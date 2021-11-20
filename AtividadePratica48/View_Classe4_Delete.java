@@ -21,17 +21,18 @@ public class View_Classe4_Delete {
          String user = "postgres";
          String pwd = "123789";
          String connectionString = String.format("%s:%s://%s:%d/%s", driverType, driverName, host, port, database);
-         String sql = "DELETE FROM Categoria WHERE id = ? ";
 
          // Conectando no Banco de Dados
          Connection conn = DriverManager.getConnection(connectionString, user, pwd);
 
          // Query SQL
-         PreparedStatement prepStatement = conn.prepareStatement(sql);
+         PreparedStatement prepStatement = conn.prepareStatement("DELETE FROM Categoria WHERE id = ? ");
 
+         // ID a ser deletado + comando para setar esse valor de ID informado
          int idDeletar = 6;
          prepStatement.setInt(1, idDeletar);
 
+         // Executar
          prepStatement.execute();
 
          // Verificando quantas linhas foram afetadas pelo método DELETE
