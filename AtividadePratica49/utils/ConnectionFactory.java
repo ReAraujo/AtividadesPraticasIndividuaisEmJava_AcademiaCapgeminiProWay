@@ -26,8 +26,7 @@ public class ConnectionFactory {
         poolConexoes.setMaxPoolSize(100);
         this.dataSource = poolConexoes; // poolConexoes é atribuído ao dataSource 
     }
-
-
+    
     // Método que terá o retorno da conexão
     // Não terá sentido aplicar o Try/Catch no método 'getConnection()' pois a conexão será utilizada nas Classes 'View', por isso, usa-se o throws
     // O Try/Catch você utiliza quando já está tratando a exceção e o throw você utiliza quando quer passar o tratamento da exceção para outra classe
