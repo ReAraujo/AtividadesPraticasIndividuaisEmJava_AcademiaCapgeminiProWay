@@ -26,7 +26,10 @@ public class View_Classe1_Select {
             // Conectando no Banco de Dados
             Connection conn = DriverManager.getConnection(connectionString, user, pwd);
 
+            // Query SQL            
             PreparedStatement prepStatement = conn.prepareStatement("SELECT id, nome FROM Categoria");
+
+            // Executando
             prepStatement.execute();
 
             // Result = Retorno da consulta
