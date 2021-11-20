@@ -23,22 +23,24 @@ public class View_Classe2_Insert {
             String user = "postgres";
             String pwd = "123789";
             String connectionString = String.format("%s:%s://%s:%d/%s", driverType, driverName, host, port, database);
-            String sql = "INSERT INTO Categoria (nome, descricao) values (?, ?)";
             
             // Conectando no Banco de Dados
             Connection conn = DriverManager.getConnection(connectionString, user, pwd);
             
             // Query SQL
-            // Utilizar o PreparedStatement faz com que o que valor que foi adicionado na variável 'sql' seja lido em formato String 
-            //  e não como formato de comando utilizado dentro do Banco de dados
-            PreparedStatement prepStatement = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement prepStatement = conn.prepareStatement("INSERT INTO Categoria (nome, descricao) values (?, ?)", Statement.RETURN_GENERATED_KEYS);
             
             // Recebendo os parâmetros 'nome' e 'descrição' através de variáveis
             String nome = "Nome da Categoria";
             String descricao = "Descrição da Categoria";
             prepStatement.setString(1, nome);
             prepStatement.setString(2, descricao);
+            // Utilizar o PreparedStatement faz com que o que valor que foi adicionado nas variáveis 'nome' e 'descricao' seja lido em formato String 
+            // e não em formato comando SQL utilizado dentro do Banco de dados, impedindo assim, um possível ataque ao Banco de Dados. Exemplo:
+            // -> String possivelAtaque = "Hardware');delete from categoria; INSERT INTO categoria(nome) values('otario";
+            // -> prepStatement.setString(1, possivelAtaque);          
 
+            // Executando
             prepStatement.execute();
 
             // Retorno da consulta - Retorna o conjunto de IDs que foram gerados
