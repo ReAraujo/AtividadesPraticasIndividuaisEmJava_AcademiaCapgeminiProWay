@@ -1,7 +1,8 @@
 package utils;
-/* _  Crie uma cópia das classes criadas durante a atividade ATP48.
-   _  Crie uma classe ConnectionFactory para abrigar sua fábrica de conexões. Esta classe deve ter um método que retorne uma Conexão com o Postgres.
-  _  Altere as 4 classes para utilizarem a fábrica de conexões e tambem o try with resource para que a conexão seja fechada automaticamente.
+/* _  Crie uma cópia das classes criadas durante a atividade ATP49.
+   _  Faça o download das bibliotecas para criação do pool:C3P0 e mchange
+   _  Altere a fábrica de conexões para utilizarem um pool de conexões com um limite de 50 conexões.
+   _  Altere o método que retorna a conexão para retornar uma conexão vinda de um DataSource;
 */
 
 import java.sql.Connection;
@@ -12,9 +13,6 @@ import javax.sql.DataSource;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 public class ConnectionFactory {
-    // A classe ConnectionFactory faz parte de um Padrão de Projeto e serve como estrutura para instanciar/fornecer
-    // conexão a todas as classes que precisar utilizar -> Classe de Fábrica de Conexões 
-
     private DataSource dataSource; // Interface DataSource: Tenta estabelecer uma conexão com a fonte de dados que o objeto representa 
 
     public ConnectionFactory() {
@@ -23,7 +21,7 @@ public class ConnectionFactory {
         poolConexoes.setJdbcUrl("jdbc:postgresql://localhost:5432/postgres");
         poolConexoes.setUser("postgres");
         poolConexoes.setPassword("123789");
-        poolConexoes.setMaxPoolSize(100);
+        poolConexoes.setMaxPoolSize(50);
         this.dataSource = poolConexoes; // poolConexoes é atribuído ao dataSource 
     }
 

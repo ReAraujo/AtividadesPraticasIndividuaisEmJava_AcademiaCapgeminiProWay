@@ -1,7 +1,8 @@
 package view;
-/* _  Crie uma cópia das classes criadas durante a atividade ATP48.
-   _  Crie uma classe ConnectionFactory para abrigar sua fábrica de conexões. Esta classe deve ter um método que retorne uma Conexão com o Postgres.
-  _  Altere as 4 classes para utilizarem a fábrica de conexões e tambem o try with resource para que a conexão seja fechada automaticamente.
+/* _  Crie uma cópia das classes criadas durante a atividade ATP49.
+   _  Faça o download das bibliotecas para criação do pool:C3P0 e mchange
+   _  Altere a fábrica de conexões para utilizarem um pool de conexões com um limite de 50 conexões.
+   _  Altere o método que retorna a conexão para retornar uma conexão vinda de um DataSource;
 */
 
 import java.sql.Connection;
@@ -16,7 +17,7 @@ public class View_Classe4_Delete {
       // dentro de um Try with resource para um controle de abertura e fechamento de conexões      
 
       try (Connection conn = new ConnectionFactory().getConnection()) { 
-         int idDeletar = 6;
+         int idDeletar = 9;
          String sql = "DELETE FROM Categoria WHERE id = ? ";
 
          try (PreparedStatement prepStatement = conn.prepareStatement(sql)) {
