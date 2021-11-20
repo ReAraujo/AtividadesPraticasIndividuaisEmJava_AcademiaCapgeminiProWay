@@ -1,8 +1,6 @@
-/* _  Crie uma cópia das classes criadas durante a atividade ATP47.
-   _  Altere a classe1 para utilizar preparedStatement.
-   _  Altere a classe2 para receber os parâmetros nome e descrição através de variáveis e troque o Statement para PreparedStatement.
-   _  Altere a classe3 para  receber os nomes das categorias que serão alteradas, através de variáveis e troque o Statement para PreparedStatement.
-   _  Altere a classe4 para receber o Id da categorias a ser deletada através de variável e troque o Statement para PreparedStatement..
+/* _  Crie uma cópia das classes criadas durante a atividade ATP48.
+   _  Crie uma classe ConnectionFactory para abrigar sua fábrica de conexões. Esta classe deve ter um método que retorne uma Conexão com o Postgres.
+  _  Altere as 4 classes para utilizarem a fábrica de conexões e tambem o try with resource para que a conexão seja fechada automaticamente.
 */
 
 import java.sql.Connection;
