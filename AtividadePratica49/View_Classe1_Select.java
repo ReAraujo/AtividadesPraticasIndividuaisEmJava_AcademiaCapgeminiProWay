@@ -10,9 +10,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
-public class View_Classe2_Insert {
+public class View_Classe1_Select {
     public static void main(String[] args) {
         try {
             String driverType = "jdbc";
@@ -23,31 +22,22 @@ public class View_Classe2_Insert {
             String user = "postgres";
             String pwd = "123789";
             String connectionString = String.format("%s:%s://%s:%d/%s", driverType, driverName, host, port, database);
-            String sql = "INSERT INTO Categoria (nome, descricao) values (?, ?)";
-            
+            String sql = "SELECT id, nome FROM Categoria";
+
             // Conectando no Banco de Dados
             Connection conn = DriverManager.getConnection(connectionString, user, pwd);
-            
-            // Query SQL
-            // Utilizar o PreparedStatement faz com que o que valor que foi adicionado na variável 'sql' seja lido em formato String 
-            //  e não como formato de comando utilizado dentro do Banco de dados
-            PreparedStatement prepStatement = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            
-            // Recebendo os parâmetros 'nome' e 'descrição' através de variáveis
-            String nome = "Nome da Categoria";
-            String descricao = "Descrição da Categoria";
-            prepStatement.setString(1, nome);
-            prepStatement.setString(2, descricao);
 
+            PreparedStatement prepStatement = conn.prepareStatement(sql);
             prepStatement.execute();
 
-            // Retorno da consulta - Retorna o conjunto de IDs que foram gerados
-            ResultSet retornoIDs = prepStatement.getGeneratedKeys();
+            // Result = Retorno da consulta
+            ResultSet result = prepStatement.getResultSet();
 
-            // Imprimindo o resultado de Result (retorno)
-            while (retornoIDs.next()) { 
-                int id = retornoIDs.getInt(1);
-                System.out.println(id);
+            // Imprimindo o resultado 
+            while (result.next()) { 
+                int id = result.getInt("id");
+                String nome = result.getString("nome");
+                System.out.printf("|ID: %d - |Nome: %s \n", id, nome);            
             }
 
             // Fechando a conexão 
@@ -57,5 +47,4 @@ public class View_Classe2_Insert {
             System.out.println("Desculpe, não foi possível conectar.");
         }
     }
-    
 }

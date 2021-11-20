@@ -29,8 +29,6 @@ public class View_Classe2_Insert {
             Connection conn = DriverManager.getConnection(connectionString, user, pwd);
             
             // Query SQL
-            // Utilizar o PreparedStatement faz com que o que valor que foi adicionado na variável 'sql' seja lido em formato String 
-            //  e não como formato de comando utilizado dentro do Banco de dados
             PreparedStatement prepStatement = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             
             // Recebendo os parâmetros 'nome' e 'descrição' através de variáveis
