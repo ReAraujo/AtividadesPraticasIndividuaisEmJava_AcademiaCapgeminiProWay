@@ -21,13 +21,12 @@ public class View_Classe3_Update {
          String user = "postgres";
          String pwd = "123789";
          String connectionString = String.format("%s:%s://%s:%d/%s", driverType, driverName, host, port, database);
-         String sql = "UPDATE Categoria SET nome = ? where id = ?";
 
          // Conectando no Banco de Dados
          Connection conn = DriverManager.getConnection(connectionString, user, pwd);
 
          // Query SQL
-         PreparedStatement prepStatement = conn.prepareStatement(sql);
+         PreparedStatement prepStatement = conn.prepareStatement("UPDATE Categoria SET nome = ? where id = ?");
 
          // Recebendo os parâmetros 'id' e 'nome' através de variáveis
          int id = 3;
@@ -35,6 +34,7 @@ public class View_Classe3_Update {
          prepStatement.setInt(2, id);
          prepStatement.setString(1, nome);
 
+         // Executando
          prepStatement.execute();
 
          // Verificando quantas linhas foram afetadas pelo método UPDATE
