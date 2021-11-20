@@ -5,32 +5,27 @@ package utils;
 */
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
-
-import javax.sql.DataSource;
-
-import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 public class ConnectionFactory {
     // A classe ConnectionFactory faz parte de um Padrão de Projeto e serve como estrutura para instanciar/fornecer
     // conexão a todas as classes que precisar utilizar -> Classe de Fábrica de Conexões 
 
-    private DataSource dataSource; // Interface DataSource: Tenta estabelecer uma conexão com a fonte de dados que o objeto representa 
+    private String url;
+    private String user;
+    private String pwd;
 
     public ConnectionFactory() {
-        // Poll de Conexões: ocorre o gerenciamento interno das conexões 
-        ComboPooledDataSource poolConexoes = new ComboPooledDataSource();
-        poolConexoes.setJdbcUrl("jdbc:postgresql://localhost:5432/postgres");
-        poolConexoes.setUser("postgres");
-        poolConexoes.setPassword("123789");
-        poolConexoes.setMaxPoolSize(100);
-        this.dataSource = poolConexoes; // poolConexoes é atribuído ao dataSource 
+        this.url = "jdbc:postgresql://localhost:5432/postgres";
+        this.user = "postgres";
+        this.pwd = "123789";
     }
 
     // Método que terá o retorno da conexão
     // Não terá sentido aplicar o Try/Catch no método 'getConnection()' pois a conexão será utilizada nas Classes 'View', por isso, usa-se o throws
     // O Try/Catch você utiliza quando já está tratando a exceção e o throw você utiliza quando quer passar o tratamento da exceção para outra classe
     public Connection getConnection() throws SQLException{
-        return this.dataSource.getConnection();
+        return DriverManager.getConnection(this.url, this.user, this.pwd);
     }
 }
