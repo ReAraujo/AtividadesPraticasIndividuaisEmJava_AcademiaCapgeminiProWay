@@ -1,13 +1,12 @@
-package utils;
-/* _  Crie uma cópia das classes criadas durante a atividade ATP49.
-   _  Faça o download das bibliotecas para criação do pool:C3P0 e mchange
-   _  Altere a fábrica de conexões para utilizarem um pool de conexões com um limite de 50 conexões.
-   _  Altere o método que retorna a conexão para retornar uma conexão vinda de um DataSource;
+package dao;
+/* _  Crie uma cópia das classes criadas durante a atividade ATP50.
+   _  Altere aplicação para separar a camada de acesso ao banco da camada de visualização.
+   _  Crie uma camada DAO e nela uma classe CategoriaDAO que irá realizar as operações de CRUD no banco com JDBC.
+   _  Ajuste as classes de view para utilizarem a classe CategoriaDAO;
 */
 
 import java.sql.Connection;
 import java.sql.SQLException;
-
 import javax.sql.DataSource;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
