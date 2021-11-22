@@ -4,7 +4,7 @@
     </head>
     <body>
         <h2>Sistema de Vendas</h2>
-        <a href = "vendas-1/categoria">Categoria</a> <br /> 
-        <a href = "vendas-1/produto">Produto</a>
+        <a href = "/categoria">Categoria</a> <br /> 
+        <a href = "/produto">Produto</a>
     </body>
 </html>
