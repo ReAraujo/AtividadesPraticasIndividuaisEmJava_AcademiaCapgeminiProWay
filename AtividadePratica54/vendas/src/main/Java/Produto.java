@@ -1,8 +1,9 @@
-/* _  Crie um projeto maven utilizando o archetype: maven-archetype-webapp.
-_  Utilize o projeto construido ate a atividade ATP52 como base para este projeto.
-_  Adicione ao POM.XML as dependencias e plugins necessários para criar e rodar uma aplicação java web com servlet no tomcat.
-_  Crie uma página principal com links para /<nome_app>/categoria e /<nome_app>/produto.
-_  Crie dois servlets que respondem aos endereços /categoria e /produto. Estes servlets devem retornar uma frase simples com os nomes: Módulo Categoria e Módulo Produto.
+/* _  Utilize o projeto construido ate a atividade ATP53 como base para este projeto.
+   _  Altere os servlets de produto e categoria para que possam ler os parâmetros da requisição 
+     e imprima os valores dos parâmetros na resposta.
+   _  Para categoria, leia os parâmetros nome e descrição.
+   _  Para produto, leia os parâmetros nome, valor e id_categoria.
+   _  Utilize o método printf da classe PrintWriter para imprimir, na resposta, os parâmetros lidos.
 */
 
 import java.io.IOException;
@@ -22,7 +23,20 @@ public class Produto extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter out = resp.getWriter();
+
+        String nomeProd = req.getParameter("nome");
+        String parametroValor = req.getParameter("valor");
+        String parametroID = req.getParameter("id_categoria");
+        
         out.println("Modulo Produto");
+
+        if(parametroValor != null){
+            int id_categoria = Integer.parseInt(parametroID);
+            double valorProd = Double.parseDouble(parametroValor);
+            out.printf("\nInformacoes Produto:\nNome: %s - ID: %d - Valor: %.2f", nomeProd, id_categoria, valorProd);
+        } else{
+            out.printf("\nInformacoes Produto: Nome: %s", nomeProd);
+        }
     }
     
 }
