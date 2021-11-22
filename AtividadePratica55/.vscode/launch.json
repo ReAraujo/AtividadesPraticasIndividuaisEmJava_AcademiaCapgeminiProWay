@@ -10,7 +10,6 @@
             "name": "Launch Current File",
             "url": "http://localhost:8082",
             "request": "launch",
-            "mainClass": "${file}"
         }
     ]
 }
