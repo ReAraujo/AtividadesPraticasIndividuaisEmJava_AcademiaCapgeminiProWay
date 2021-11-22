@@ -16,14 +16,15 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/categoria")
+@WebServlet(urlPatterns = "/categoria") // Endereço do qual o Servlet responde = "/categoria"
 public class Categoria extends HttpServlet {
     // Protocolo HTTP/HTTPS: 
-        // Request = solicitação do usuário - Exemplo: o usuário acessando end. via Chrome 
-        // Response = resposta do servidor ao usuário - Exemplo: carregar a página web no Chrome
+        // Request = Solicitação do usuário - Exemplo: o usuário acessando end. via Chrome 
+        // Response = Resposta do servidor ao usuário - Exemplo: carregar a página web no Chrome
+    
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        PrintWriter out = resp.getWriter();
-        out.println("Modulo Categoria");
+        PrintWriter out = resp.getWriter(); // Objeto da classe PrintWriter para poder escrever resposta
+        out.println("Modulo Categoria"); // Resposta da página que será enviada ao usuário
     }
 }
