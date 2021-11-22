@@ -30,7 +30,7 @@ public class Produto extends HttpServlet {
         
         out.println("Modulo Produto");
 
-        if(parametroValor != null){
+        if(parametroID != null){
             int id_categoria = Integer.parseInt(parametroID);
             double valorProd = Double.parseDouble(parametroValor);
             out.printf("\nInformacoes Produto:\nNome: %s - ID: %d - Valor: %.2f", nomeProd, id_categoria, valorProd);
