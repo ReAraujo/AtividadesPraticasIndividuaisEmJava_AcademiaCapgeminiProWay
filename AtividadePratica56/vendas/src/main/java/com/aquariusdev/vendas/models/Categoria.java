@@ -3,6 +3,7 @@ package com.aquariusdev.vendas.models;
 public class Categoria {
     private String nome;
     private String descricao;
+    private int id;
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -17,5 +18,10 @@ public class Categoria {
     public String getDescricao() {
         return this.descricao;
     }
-    
+    public void setId(int id) {
+        this.id = id;
+    }
+    public int getId() {
+        return id;
+    }
 }

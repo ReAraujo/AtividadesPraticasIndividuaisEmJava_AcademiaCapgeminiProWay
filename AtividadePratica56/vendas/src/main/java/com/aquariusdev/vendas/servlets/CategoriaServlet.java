@@ -3,6 +3,7 @@ package com.aquariusdev.vendas.servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import com.aquariusdev.vendas.dao.CategoriaDao;
 import com.aquariusdev.vendas.models.Categoria;
 
 import jakarta.servlet.ServletException;
@@ -19,6 +20,7 @@ public class CategoriaServlet extends HttpServlet {
     
    @Override
    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+      CategoriaDao dao = new CategoriaDao();
       Categoria cat1 = new Categoria(); // Criação do objeto da classe Categoria de Models
 
       cat1.setNome(req.getParameter("nome"));
