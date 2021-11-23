@@ -18,6 +18,7 @@ public class Categoria {
     public String getDescricao() {
         return this.descricao;
     }
+    
     public void setId(int id) {
         this.id = id;
     }
