@@ -1,2 +1,4 @@
-Categoria.class
-Produto.class
+com\aquariusdev\vendas\models\Categoria.class
+com\aquariusdev\vendas\models\Produto.class
+com\aquariusdev\vendas\servlets\ProdutoServlet.class
+com\aquariusdev\vendas\servlets\CategoriaServlet.class
