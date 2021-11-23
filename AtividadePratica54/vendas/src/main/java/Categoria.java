@@ -29,7 +29,7 @@ public class Categoria extends HttpServlet {
         PrintWriter out = resp.getWriter();
         out.printf("Modulo Categoria");
         // Leitura e envio dos parâmetros nome e descrição por requisição pela url da página
-        out.printf("\nInformacoes Categoria:\nNome: %s - Descricao: %s", nomeCat, descricaoCat);
+        out.printf("\nInformacoes da Categoria:\nNome: %s - Descricao: %s", nomeCat, descricaoCat);
     
     }
 }

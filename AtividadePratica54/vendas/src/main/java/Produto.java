@@ -37,9 +37,9 @@ public class Produto extends HttpServlet {
             // é necessário fazer a conversão para tipos numéricos 
             int id_categoria = Integer.parseInt(parametroID);
             double valorProd = Double.parseDouble(parametroValor);
-            out.printf("\nInformacoes Produto:\nNome: %s - ID: %d - Valor: %.2f", nomeProd, id_categoria, valorProd);
+            out.printf("\nInformacoes do Produto:\nNome: %s - ID: %d - Valor: %.2f", nomeProd, id_categoria, valorProd);
         } else{
-            out.printf("\nInformacoes Produto: Nome: %s", nomeProd);
+            out.printf("\nInformacoes do Produto: Nome: %s", nomeProd);
         }
     }
         
