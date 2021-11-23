@@ -32,7 +32,7 @@ public class Produto extends HttpServlet {
         out.println("Modulo Produto");
     
         // Leitura e envio dos parâmetros nome e descrição por requisição pela url da página
-        if(parametroValor != null){
+        if(parametroID != null && parametroValor != null){
             // A leitura de parâmetro via url retorna um tipo String então 
             // é necessário fazer a conversão para tipos numéricos 
             int id_categoria = Integer.parseInt(parametroID);
