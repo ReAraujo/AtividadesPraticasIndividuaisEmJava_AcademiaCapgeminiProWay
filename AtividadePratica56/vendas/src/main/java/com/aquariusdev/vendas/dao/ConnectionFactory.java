@@ -1,6 +1,5 @@
 package com.aquariusdev.vendas.dao;
 
-import java.beans.PropertyVetoException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import javax.sql.DataSource;
@@ -12,15 +11,6 @@ public class ConnectionFactory {
 
     public ConnectionFactory() {
         ComboPooledDataSource poolConexoes = new ComboPooledDataSource();
-        try {
-            poolConexoes.setDriverClass("org.postgresql.Driver");
-        } catch (PropertyVetoException ex) {
-            ex.printStackTrace();
-        }
-        poolConexoes.setJdbcUrl("jdbc:postgresql://localhost:5432/postgres");
-        poolConexoes.setUser("postgres");
-        poolConexoes.setPassword("123789");
-        poolConexoes.setMaxPoolSize(50);
         this.dataSource = poolConexoes; 
     }
 
