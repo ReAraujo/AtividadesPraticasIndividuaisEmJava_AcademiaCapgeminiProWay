@@ -5,20 +5,18 @@ import java.util.ArrayList;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 
 import com.aquariusdev.vendas.models.Categoria;
 
 public class CategoriaDao {
-
     // CRUD
     // CREATE:
-    public int create(Categoria model) {  
+    public int insert(Categoria model) {  
         int idGerado = 0;
         try(Connection conn = new ConnectionFactory().getConnection()) {
             String sql = "INSERT INTO Categoria (nome, descricao) values (?, ?)";
-            
+        
             PreparedStatement prepStatement = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             prepStatement.setString(1, model.getNome());  
             prepStatement.setString(2, model.getDescricao());  
@@ -58,7 +56,6 @@ public class CategoriaDao {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
         return lista;
     }
     // UPDATE: 
@@ -76,7 +73,6 @@ public class CategoriaDao {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return linhasAfetadas;
     }
     // DELETE: 

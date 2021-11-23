@@ -1,3 +1,11 @@
+/*_  Utilize os projetos construídos nas atividades ATP52(JDBC) e ATP54(WEB) como base para este projeto.
+  _  Ajuste o projeto para incluir as dependências do driver de conexão do postgres e a dependencia C3P0 para criação o pool de conexões.
+  _  Altere a aplicação para construir uma camada DAO. Adicione na camada DAO, a classe de fábrica de conexões e a classe CategoriaDAO.
+  _  Ajuste o model Categoria e Produto para possuírem um id. Adicione os metodos getter e setter.
+  _  Ajuste o servlet de categoria para salvar uma categoria no banco utilizando a classe DAO. Retorne na resposta o ID gerado no banco.
+  _  Crie um novo servlet para listar as categorias cadastradas.
+*/
+
 package com.aquariusdev.vendas.servlets;
 
 import java.io.IOException;
@@ -20,7 +28,7 @@ public class ProdutoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter out = resp.getWriter();
-        Produto prod1 = new Produto(); // Criação do objeto da classe Produto de Models
+        Produto prod1 = new Produto(); 
     
         String nomeProd = req.getParameter("nome");
         String parametroValor = req.getParameter("valor");
