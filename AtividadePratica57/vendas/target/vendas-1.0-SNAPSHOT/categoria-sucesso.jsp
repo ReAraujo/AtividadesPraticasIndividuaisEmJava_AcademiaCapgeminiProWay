@@ -11,7 +11,8 @@
     <title>Sucesso</title>
 </head>
     <body>
-        <h2>Sucesso</h2>
+        <h2>Operação realizada com sucesso!</h2>
         <h4>Categoria - ID: <%= id %> - Cadastrada com sucesso!</h4><br />
+        <a href="/vendas-1/categoria.jsp">Categoria - Listar</a><br />
     </body>
 </html>

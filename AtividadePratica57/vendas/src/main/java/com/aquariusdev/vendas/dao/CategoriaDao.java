@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 import com.aquariusdev.vendas.models.Categoria;
@@ -44,17 +45,40 @@ public class CategoriaDao {
             prepStatement.execute();
 
             ResultSet result = prepStatement.getResultSet();
-
-            while (result.next()) { 
-                Categoria model = new Categoria();
-                model.setId(result.getInt("id"));
-                model.setNome(result.getString("nome"));
-                model.setDescricao(result.getString("descricao"));
-                lista.add(model);       
-            }  
+            lista = criarLista(result);  
             
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        return lista;
+    }
+    // READ COM PARÂMETRO 'String nome':
+    public ArrayList<Categoria> read(String nome) {
+        ArrayList<Categoria> lista = new ArrayList<Categoria>();
+
+        try(Connection conn = new ConnectionFactory().getConnection()) {
+            String sql = "SELECT * FROM Categoria WHERE nome = ?";
+
+            PreparedStatement prepStatement = conn.prepareStatement(sql);
+            prepStatement.setString(1, nome);
+            prepStatement.execute();
+
+            ResultSet result = prepStatement.getResultSet();
+            criarLista(result);  
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return lista;
+    }
+    private ArrayList<Categoria> criarLista(ResultSet result) throws SQLException {
+        ArrayList<Categoria> lista = new ArrayList<Categoria>();
+        while (result.next()) { 
+            Categoria model = new Categoria();
+            model.setId(result.getInt("id"));
+            model.setNome(result.getString("nome"));
+            model.setDescricao(result.getString("descricao"));
+            lista.add(model);       
         }
         return lista;
     }

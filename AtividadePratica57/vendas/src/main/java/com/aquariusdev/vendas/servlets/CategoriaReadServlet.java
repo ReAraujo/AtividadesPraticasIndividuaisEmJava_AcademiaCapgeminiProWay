@@ -9,11 +9,12 @@
 package com.aquariusdev.vendas.servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import com.aquariusdev.vendas.dao.CategoriaDao;
 import com.aquariusdev.vendas.models.Categoria;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -24,11 +25,22 @@ import jakarta.servlet.http.HttpServletResponse;
 public class CategoriaReadServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        PrintWriter out = resp.getWriter();
         CategoriaDao dao = new CategoriaDao();
+        ArrayList<Categoria> categorias;
+        String nome = req.getParameter("nome");
 
-        for (Categoria model : dao.read()) {
-            out.printf("%d - %s \n", model.getId(), model.getNome());
+        if (nome != null && nome != " ") {
+            categorias = dao.read(nome);
+        } else {
+            categorias = dao.read();
         }
+
+        req.setAttribute("categorias", categorias);
+
+        RequestDispatcher reqDisp = req.getRequestDispatcher("/categoria-lista.jsp");
+        // RequestDispatcher = encaminha uma requisição para ser atendida por outro recurso (forward)
+        // No lado do server, a requisição do usuário será encaminhada para ser atendida por outro recurso (outro servlet),
+        //  este outro servlet eventualmente devolverá outra página para o usuário.
+        reqDisp.forward(req, resp); // .forward = Inclui o conteúdo de um recurso (servlet, página JSP, arquivo HTML) na resposta. 
     }
 }
