@@ -1,9 +1,8 @@
-/*_  Utilize os projetos construídos nas atividades ATP52(JDBC) e ATP54(WEB) como base para este projeto.
-  _  Ajuste o projeto para incluir as dependências do driver de conexão do postgres e a dependencia C3P0 para criação o pool de conexões.
-  _  Altere a aplicação para construir uma camada DAO. Adicione na camada DAO, a classe de fábrica de conexões e a classe CategoriaDAO.
-  _  Ajuste o model Categoria e Produto para possuírem um id. Adicione os metodos getter e setter.
-  _  Ajuste o servlet de categoria para salvar uma categoria no banco utilizando a classe DAO. Retorne na resposta o ID gerado no banco.
-  _  Crie um novo servlet para listar as categorias cadastradas.
+/*_  Utilize o projeto construído durante a atividades ATP56 como base para este projeto.
+  _  Altere o retorno do servlet que salva uma categoria, para que ao inves de retornar a resposta, redirecione a resposta para um arquivo jsp.
+  _  Ajuste o projeto para que a lista de categorias seja impressa dentro de um JSP. Para isso encaminhe a requisição para um novo arquivo jsp e nele carregue a lista via scriptlet.
+  _  Adicione ao arquivo jsp de listagem de categorias um formulário para filtrar as categorias por nome ou descrição. Altere o DAO para realizar o filtro.
+  _  Adicione uma pasta css e crie um estilo padrão para todas as páginas jsp.
 */
 
 package com.aquariusdev.vendas.servlets;

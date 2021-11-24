@@ -57,14 +57,13 @@ public class CategoriaDao {
         ArrayList<Categoria> lista = new ArrayList<Categoria>();
 
         try(Connection conn = new ConnectionFactory().getConnection()) {
-            String sql = "SELECT * FROM Categoria WHERE nome = ?";
 
-            PreparedStatement prepStatement = conn.prepareStatement(sql);
+            PreparedStatement prepStatement = conn.prepareStatement("SELECT * FROM Categoria WHERE nome = ?");
             prepStatement.setString(1, nome);
             prepStatement.execute();
 
             ResultSet result = prepStatement.getResultSet();
-            criarLista(result);  
+            lista = criarLista(result);  
             
         } catch (Exception e) {
             e.printStackTrace();
