@@ -21,10 +21,6 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = "/produto") // Endereço do qual o Servlet responde = "/produto"
 public class ProdutoServlet extends HttpServlet {
-    // Protocolo HTTP/HTTPS: 
-        // Request = Solicitação do usuário - Exemplo: o usuário acessando end. via Chrome 
-        // Response = Resposta do servidor ao usuário - Exemplo: carregar a página web no Chrome
-    
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter out = resp.getWriter();

@@ -22,8 +22,6 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = "/categoria/listar") // Endereço do qual o Servlet responde = "/categoria/listar"
 public class CategoriaReadServlet extends HttpServlet{
-
-    // Método HTTP Get: serão aceitos envios de parâmetros via url e via forms 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter out = resp.getWriter();

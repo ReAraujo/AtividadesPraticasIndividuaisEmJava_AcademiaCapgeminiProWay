@@ -9,11 +9,11 @@
 package com.aquariusdev.vendas.servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import com.aquariusdev.vendas.dao.CategoriaDao;
 import com.aquariusdev.vendas.models.Categoria;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -22,10 +22,6 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = "/categoria") // Endereço do qual o Servlet responde = "/categoria"
 public class CategoriaServlet extends HttpServlet {
-    // Protocolo HTTP/HTTPS: 
-        // Request = Solicitação do usuário - Exemplo: o usuário acessando end. via Chrome 
-        // Response = Resposta do servidor ao usuário - Exemplo: carregar a página web no Chrome
-    
    @Override
    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
       CategoriaDao dao = new CategoriaDao();
@@ -36,10 +32,14 @@ public class CategoriaServlet extends HttpServlet {
       int id = dao.insert(model);
 
       model.setId(id);
+
+      req.setAttribute("id", model.getId()); // Enviando o atributo para a requisição em 'categoria-sucesso.jsp'
             
-      PrintWriter out = resp.getWriter();
-      out.printf("Modulo Categoria");
-      out.printf("\nA Categoria foi salva com sucesso! ID gerado: %d", model.getId());
+      RequestDispatcher reqDisp = req.getRequestDispatcher("categoria-sucesso.jsp");
+      // RequestDispatcher = encaminha uma requisição para ser atendida por outro recurso (forward)
+      // No lado do server, a requisição do usuário será encaminhada para ser atendida por outro recurso (outro servlet),
+      //  este outro servlet eventualmente devolverá outra página para o usuário.
+      reqDisp.forward(req, resp); // .forward = Inclui o conteúdo de um recurso (servlet, página JSP, arquivo HTML) na resposta. 
    }
 
 }
