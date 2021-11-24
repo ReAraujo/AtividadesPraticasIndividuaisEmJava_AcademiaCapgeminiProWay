@@ -34,7 +34,7 @@ public class CategoriaReadServlet extends HttpServlet{
             categorias = dao.read();
         }
 
-        req.setAttribute("categorias", categorias);
+        req.setAttribute("categorias", categorias); // Enviando o atributo para a requisição em '/categoria-lista.jsp'
 
         RequestDispatcher reqDisp = req.getRequestDispatcher("/categoria-lista.jsp");
         // RequestDispatcher = encaminha uma requisição para ser atendida por outro recurso (forward)
