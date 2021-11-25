@@ -9,11 +9,11 @@
     </head>
     <body>
         <h1>Cadastro de Produto</h1>
-        <form action=/vendas-1/produto method="post">
-            Nome: <input type="text" name="nome" id="nome"> <br />
-            ID da Categoria: <input type="number" name="id_categoria" id="id_categoria"> <br />
-            Valor (R$): <input type="number" name="valor" id="valor" min="0.00" step="0.01"> <br />
-            <input type="submit" value="Salvar">
+        <form action="/vendas-1/produto" method= "post">
+            Nome: <input type= "text" name= "nome" id= "nome"> <br />
+            ID da Categoria: <input type= "number" name= "id_categoria" id= "id_categoria"> <br />
+            Valor (R$): <input type= "number" name= "valor" id= "valor" min= "0.00" step= "0.01"> <br />
+            <input type= "submit" value= "Salvar">
         </form>
     </body>
 </html>

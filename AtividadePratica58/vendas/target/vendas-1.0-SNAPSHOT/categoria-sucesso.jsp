@@ -12,8 +12,8 @@
         <link rel="stylesheet" href="css/styles.css">     
     </head>
     <body>
-        <h2>Operação realizada com sucesso!</h2>
+        <h2>Operacao realizada com sucesso!</h2>
         <h4>Categoria - ID: <%= id %> - Cadastrada com sucesso!</h4><br />
-        <a href="/vendas-1/categoria.jsp">Categoria - Listar</a><br />
+        <a href="/vendas-1/categoria.jsp">Cadastar Nova Categoria</a><br />
     </body>
 </html>

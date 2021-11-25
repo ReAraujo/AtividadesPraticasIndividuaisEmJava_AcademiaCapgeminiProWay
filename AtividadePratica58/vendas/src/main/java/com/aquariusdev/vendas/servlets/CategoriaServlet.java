@@ -19,7 +19,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/categoria") // Endereço do qual o Servlet responde = "/categoria"
+@WebServlet(urlPatterns = "/categoria") // Rota do qual o Servlet responde = "/categoria"
 public class CategoriaServlet extends HttpServlet {
    @Override
    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

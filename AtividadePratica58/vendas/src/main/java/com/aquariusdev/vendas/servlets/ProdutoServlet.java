@@ -18,7 +18,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/produto") // Endereço do qual o Servlet responde = "/produto"
+@WebServlet(urlPatterns = "/produto") // Rota do qual o Servlet responde = "/produto"
 public class ProdutoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

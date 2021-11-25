@@ -12,7 +12,7 @@ import com.aquariusdev.vendas.models.Categoria;
 
 public class CategoriaDao {
     // CRUD
-    // CREATE:
+    // CREATE/Insert:
     public int insert(Categoria model) {  
         int idGerado = 0;
         try(Connection conn = new ConnectionFactory().getConnection()) {
@@ -39,7 +39,7 @@ public class CategoriaDao {
         ArrayList<Categoria> lista = new ArrayList<Categoria>();
 
         try(Connection conn = new ConnectionFactory().getConnection()) {
-            String sql = "SELECT * FROM Categoria";
+            String sql = "SELECT * FROM Categoria ORDER BY id";
 
             PreparedStatement prepStatement = conn.prepareStatement(sql);
             prepStatement.execute();
@@ -51,6 +51,30 @@ public class CategoriaDao {
             e.printStackTrace();
         }
         return lista;
+    }
+    // READ COM PARÂMETRO 'int id':
+    public Categoria readID(int id) {
+        Categoria model = new Categoria();    
+
+        try(Connection conn = new ConnectionFactory().getConnection()) {
+            String sql = "SELECT * FROM Categoria WHERE id = ? ORDER BY id";
+
+            PreparedStatement prepStatement = conn.prepareStatement(sql);
+            prepStatement.setInt(1, id);
+            prepStatement.execute();
+
+            ResultSet result = prepStatement.getResultSet();
+            while(result.next()){
+                model.setId(result.getInt("id"));
+                model.setNome(result.getString("nome"));
+                model.setDescricao(result.getString("descricao"));
+                break;
+            } 
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return model;
     }
     // READ COM PARÂMETRO 'String nome':
     public ArrayList<Categoria> read(String nome) {
