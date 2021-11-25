@@ -26,16 +26,17 @@ public class CategoriaAlterarServlet extends HttpServlet {
         int id = Integer.parseInt(req.getParameter("id")); // Pegando o parâmetro 'ID' recebido da requisição 
         // É necessária a conversão para tipo 'inteiro' pois pela rota é enviado em formato Object
 
-        String nome = req.getParameter("nome");
+        String nome = req.getParameter("nome"); // Pegando o parâmetro 'nome' recebido da requisição 
 
-        Categoria model = new Categoria();
+        Categoria model = new Categoria(); // Objeto da Categoria via Model
         model.setId(id);
         model.setNome(nome);
 
-        CategoriaDao dao = new CategoriaDao();
-        dao.update(model);
+        CategoriaDao dao = new CategoriaDao(); // Objeto da CategoriaDao
+        dao.update(model); // Utilizando o método 'update' via CategoriaDao para realizar a alteração dos parâmetros recebidos 'ID' e 'nome'
 
         RequestDispatcher reqDisp = req.getRequestDispatcher("/categoria-alterado-sucesso.jsp");
+        // RequestDispatcher = encaminha uma requisição para ser atendida por outro recurso (forward)
         req.setAttribute("id", model.getId());
         reqDisp.forward(req, resp);
     }

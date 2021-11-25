@@ -53,7 +53,7 @@ public class CategoriaDao {
         return lista;
     }
     // READ COM PARÂMETRO 'int id':
-    public Categoria readID(int id) {
+    public Categoria readByID(int id) {
         Categoria model = new Categoria();    
 
         try(Connection conn = new ConnectionFactory().getConnection()) {

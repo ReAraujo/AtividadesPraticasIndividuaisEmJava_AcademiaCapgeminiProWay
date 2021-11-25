@@ -26,7 +26,7 @@ public class CategoriaBuscarIDServlet extends HttpServlet {
         CategoriaDao dao = new CategoriaDao();
         int id = Integer.parseInt(req.getParameter("id"));
 
-        Categoria model = dao.readID(id);
+        Categoria model = dao.readByID(id);
 
         RequestDispatcher reqDis = req.getRequestDispatcher("/categoria-alterar.jsp");
         req.setAttribute("model", model);

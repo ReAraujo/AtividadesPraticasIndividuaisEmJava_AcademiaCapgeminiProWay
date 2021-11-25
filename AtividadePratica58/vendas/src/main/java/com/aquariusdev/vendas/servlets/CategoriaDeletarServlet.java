@@ -16,8 +16,8 @@ import jakarta.servlet.http.HttpServletResponse;
 public class CategoriaDeletarServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        CategoriaDao dao = new CategoriaDao();
-        Categoria model = new Categoria();
+        CategoriaDao dao = new CategoriaDao(); // Objeto da CategoriaDao
+        Categoria model = new Categoria(); // Objeto da Categoria via Model
 
         int id = Integer.parseInt(req.getParameter("id")); // Pegando o parâmetro 'ID' recebido da requisição 
         // É necessária a conversão para tipo 'inteiro' pois pela rota é enviado em formato Object
@@ -26,6 +26,7 @@ public class CategoriaDeletarServlet extends HttpServlet{
         dao.delete(model);
 
         RequestDispatcher reqDisp = req.getRequestDispatcher("/categoria/listar");
+        // RequestDispatcher = encaminha uma requisição para ser atendida por outro recurso (forward)
         reqDisp.forward(req, resp);
     }
 }
