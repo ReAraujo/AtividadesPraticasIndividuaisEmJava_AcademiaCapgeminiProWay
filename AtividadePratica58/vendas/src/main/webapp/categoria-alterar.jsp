@@ -1,7 +1,7 @@
 <%@ page import= "com.aquariusdev.vendas.models.Categoria" %>
 
 <%
-    Categoria model = (Categoria)request.getAttribute("model")
+    Categoria model = (Categoria)request.getAttribute("model");
 %>
 
 <!DOCTYPE html>

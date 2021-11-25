@@ -35,7 +35,7 @@
                         <td><%= model.getNome() %></td>
                         <td><%= model.getDescricao() %></td>
                         <td>
-                            <a href = "/vendas-1/categoria/alterar?id=<%= model.getId() %>">Alterar</a> |
+                            <a href= "/vendas-1/categoria/carregar?id=<%= model.getId() %>">Alterar</a> |
                             <a href= "/vendas-1/categoria/deletar?id=<%= model.getId() %>" >Deletar</a>
                         </td>
                     </tr>
