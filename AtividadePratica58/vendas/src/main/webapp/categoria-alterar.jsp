@@ -14,11 +14,11 @@
     <title>Categoria - Alterando</title>
 </head>
     <body>
-        <h1>Categoria - Alterando</h1>
+        <h1>Categoria - Alterar:</h1>
         <form action="/vendas-1/categoria/alterar" method="post">
             ID: <input type= "text" name= "id" id= "id" value= <%= model.getId() %>> <br />
             Nome: <input type= "text" name= "nome" id = "nome" value= <%= model.getNome() %>> <br />
-            <input type= "submit" value= "Alterar">
+            <input type= "submit" value= "Salvar Alteracao">
         </form>
     </body>
 </html>

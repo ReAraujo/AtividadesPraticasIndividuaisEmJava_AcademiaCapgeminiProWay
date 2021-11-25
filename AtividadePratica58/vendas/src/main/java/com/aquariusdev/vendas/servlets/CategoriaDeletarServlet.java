@@ -23,7 +23,7 @@ public class CategoriaDeletarServlet extends HttpServlet{
         // É necessária a conversão para tipo 'inteiro' pois pela rota é enviado em formato Object
 
         model.setId(id);;
-        dao.delete(model);
+        dao.delete(model); // Utilizando o método 'delete' via CategoriaDao para deletar a Categoria informada via parâmetro 'ID' recebido  
 
         RequestDispatcher reqDisp = req.getRequestDispatcher("/categoria/listar");
         // RequestDispatcher = encaminha uma requisição para ser atendida por outro recurso (forward)

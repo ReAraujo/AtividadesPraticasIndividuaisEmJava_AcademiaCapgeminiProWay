@@ -19,17 +19,20 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/categoria/carregar")
+@WebServlet(urlPatterns = "/categoria/carregar") // Rota do qual o Servlet responde = "/categoria/carregar"
 public class CategoriaBuscarIDServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        CategoriaDao dao = new CategoriaDao();
-        int id = Integer.parseInt(req.getParameter("id"));
+        CategoriaDao dao = new CategoriaDao(); // Objeto da CategoriaDao
+        int id = Integer.parseInt(req.getParameter("id")); // Pegando o parâmetro 'ID' recebido da requisição 
+        // É necessária a conversão para tipo 'inteiro' pois pela rota é enviado em formato Object
 
         Categoria model = dao.readByID(id);
+        // Utilizando o método 'readBy ID = ler por ID' via CategoriaDao para localizar um ID e retornar com a Categoria pertencente a esse ID
 
         RequestDispatcher reqDis = req.getRequestDispatcher("/categoria-alterar.jsp");
-        req.setAttribute("model", model);
+        // RequestDispatcher = encaminha uma requisição para ser atendida por outro recurso (forward)
+        req.setAttribute("model", model); // Enviando o model para ser utilizado como atributo no arquivo jsp
         reqDis.forward(req, resp);
     }
 }

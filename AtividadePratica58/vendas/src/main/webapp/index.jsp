@@ -10,7 +10,7 @@
     <body>
         <h2>Sistema de Vendas</h2>
         <a href = "/vendas-1/categoria.jsp">Categoria</a> <br /> 
-        <a href = "/vendas-1/categoria/listar">Categoria - Listar</a> <br />        
+        <a href = "/vendas-1/categoria/listar">Lista de Categorias</a> <br />        
         <a href = "/vendas-1/produto.jsp">Produto</a> <br />       
     </body>
 </html>

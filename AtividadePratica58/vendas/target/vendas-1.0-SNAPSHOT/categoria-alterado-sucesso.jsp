@@ -14,6 +14,6 @@
     <body>
         <h2>Operacao realizada com sucesso!</h2>
         <h4>Categoria - ID: <%= id %> - Alterada com sucesso!</h4><br />
-        <a href= "/vendas-1/categoria/listar">Categoria - Listar</a><br />
+        <a href= "/vendas-1/categoria/listar">Voltar para Categoria - Listar</a><br />
     </body>
 </html> 

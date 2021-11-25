@@ -18,7 +18,7 @@
         <form action="/vendas-1/categoria/alterar" method="post">
             ID: <input type= "text" name= "id" id= "id" value= <%= model.getId() %>> <br />
             Nome: <input type= "text" name= "nome" id = "nome" value= <%= model.getNome() %>> <br />
-            <input type= "submit" value= "Alterar">
+            <input type= "submit" value= "Salvar Alteração">
         </form>
     </body>
 </html>

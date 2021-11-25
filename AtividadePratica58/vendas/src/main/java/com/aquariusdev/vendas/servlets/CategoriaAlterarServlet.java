@@ -37,7 +37,7 @@ public class CategoriaAlterarServlet extends HttpServlet {
 
         RequestDispatcher reqDisp = req.getRequestDispatcher("/categoria-alterado-sucesso.jsp");
         // RequestDispatcher = encaminha uma requisição para ser atendida por outro recurso (forward)
-        req.setAttribute("id", model.getId());
+        req.setAttribute("id", model.getId()); // Enviando o model para ser utilizado como atributo no arquivo jsp
         reqDisp.forward(req, resp);
     }
 }
