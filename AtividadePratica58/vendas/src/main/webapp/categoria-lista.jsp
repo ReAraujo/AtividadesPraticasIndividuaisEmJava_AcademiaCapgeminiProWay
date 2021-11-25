@@ -15,7 +15,7 @@
     </head>
     <body>
         <h1>Lista - Categorias</h1>
-        <form action="/vendas-1/categoria/listar" method="get">
+        <form action= "/vendas-1/categoria/listar" method="get">
             Nome:<input type="text" name="nome" id="nome">
             <input type="submit" value="Filtrar">
         </form>
@@ -25,6 +25,7 @@
                     <th>ID</th>
                     <th>NOME</th>
                     <th>DESCRICAO</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -33,6 +34,10 @@
                         <td><%= model.getId() %></td>
                         <td><%= model.getNome() %></td>
                         <td><%= model.getDescricao() %></td>
+                        <td>
+                            <a href = "/vendas-1/categoria/alterar?id=<%= model.getId() %>">Alterar</a> |
+                            <a href= "/vendas-1/categoria/deletar?id=<%= model.getId() %>" >Deletar</a>
+                        </td>
                     </tr>
                 <%}%>
             </tbody>

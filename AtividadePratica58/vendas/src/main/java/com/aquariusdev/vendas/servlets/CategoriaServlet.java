@@ -1,8 +1,8 @@
-/*_  Utilize o projeto construído durante a atividades ATP56 como base para este projeto.
-  _  Altere o retorno do servlet que salva uma categoria, para que ao inves de retornar a resposta, redirecione a resposta para um arquivo jsp.
-  _  Ajuste o projeto para que a lista de categorias seja impressa dentro de um JSP. Para isso encaminhe a requisição para um novo arquivo jsp e nele carregue a lista via scriptlet.
-  _  Adicione ao arquivo jsp de listagem de categorias um formulário para filtrar as categorias por nome ou descrição. Altere o DAO para realizar o filtro.
-  _  Adicione uma pasta css e crie um estilo padrão para todas as páginas jsp.
+/*_  Utilize o projeto construído durante a atividades ATP57 como base para este projeto.
+  _  Adicione a operação de delete, criando um link na página de listar. Crie os servlets e 
+     jsps necessários para que a operação funcione.
+  _  Adicione a operação de alterar, crie um link na página de listar, altere o dao para filtrar por id, 
+     crie os dois servlets, um para carregar o dado em um form e o outro para salvar as alterações.
 */
 
 package com.aquariusdev.vendas.servlets;
