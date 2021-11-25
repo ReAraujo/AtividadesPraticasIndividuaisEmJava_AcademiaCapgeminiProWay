@@ -24,7 +24,7 @@ public class CategoriaBuscarIDServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         CategoriaDao dao = new CategoriaDao(); // Objeto da CategoriaDao
-        int id = Integer.parseInt(req.getParameter("id")); // Pegando o parâmetro 'ID' recebido da requisição 
+        int id = Integer.parseInt(req.getParameter("id")); // Pegando o parâmetro 'ID' recebido da requisição - Request
         // É necessária a conversão para tipo 'inteiro' pois pela rota é enviado em formato Object
 
         Categoria model = dao.readByID(id);

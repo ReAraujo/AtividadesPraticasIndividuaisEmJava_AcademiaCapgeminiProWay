@@ -19,7 +19,7 @@ public class CategoriaDeletarServlet extends HttpServlet{
         CategoriaDao dao = new CategoriaDao(); // Objeto da CategoriaDao
         Categoria model = new Categoria(); // Objeto da Categoria via Model
 
-        int id = Integer.parseInt(req.getParameter("id")); // Pegando o parâmetro 'ID' recebido da requisição 
+        int id = Integer.parseInt(req.getParameter("id")); // Pegando o parâmetro 'ID' recebido da requisição - Request
         // É necessária a conversão para tipo 'inteiro' pois pela rota é enviado em formato Object
 
         model.setId(id);;

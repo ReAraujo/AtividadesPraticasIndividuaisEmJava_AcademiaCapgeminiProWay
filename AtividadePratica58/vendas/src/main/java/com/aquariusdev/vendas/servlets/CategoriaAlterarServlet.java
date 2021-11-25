@@ -23,7 +23,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class CategoriaAlterarServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int id = Integer.parseInt(req.getParameter("id")); // Pegando o parâmetro 'ID' recebido da requisição 
+        int id = Integer.parseInt(req.getParameter("id")); // Pegando o parâmetro 'ID' recebido da requisição - Request
         // É necessária a conversão para tipo 'inteiro' pois pela rota é enviado em formato Object
 
         String nome = req.getParameter("nome"); // Pegando o parâmetro 'nome' recebido da requisição 
