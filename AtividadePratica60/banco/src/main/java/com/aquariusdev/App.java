@@ -38,7 +38,7 @@ public class App {
         // .persist() = Persistindo a entidade 'model' - seria somente preciso esse passo se o controle estivesse pelo Tomcat:
         entMan.persist(model); 
         // fazendo o controle local da conexão = fechamento da conexão:
-        entMan.getTransaction().commit(); 
+        entMan.persist(model); 
         
         for (Categoria categoria : lista) {
             System.out.printf("ID: %d | Nome: %s | Descrição: %s \n",categoria.getId(), categoria.getNome(), categoria.getDescricao()); 
