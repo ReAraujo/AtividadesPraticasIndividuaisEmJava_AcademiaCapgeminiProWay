@@ -43,5 +43,4 @@ public class Categoria {
     public String getDescricao() {
         return this.descricao;
     }
-    
 }

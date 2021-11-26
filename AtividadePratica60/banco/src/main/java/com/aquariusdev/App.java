@@ -28,6 +28,5 @@ public class App {
         for (Categoria categoria : dao.read()) {
             System.out.printf("ID: %d | Nome: %s | Descrição: %s \n",categoria.getId(), categoria.getNome(), categoria.getDescricao()); 
         }
-
     }
 }
