@@ -1,12 +1,7 @@
-/* _  Acesse o site de criação de projetos spring no endereço:  https://start.spring.io/ .
-   _  Crie um projeto com as dependências do Spring JPA e o Driver do Postgres.
-   _  Gere o projeto, descompacte a pasta e cole em repositório GIT. 
-   _  Adicione as configurações de banco de dados no arquivo resources
-   _  Execute os comandos clean e install do maven.
-   _  Teste a aplicação executando a classe java que já veio com o do projeto.
-   _  Crie uma camada model e adicione a classe model de Clientes. Crie as propriedades que julgar necessário.
-   _  Crie uma camada repository e adicione a interface ClienteRepository que herda de CrudRepository.
-   _  Realize os testes da repository na classe principal da aplicação. Lembre-se de utilizar a injeção de dependências para criação da instância da interface repository.
+/* _  Utilize o projeto criado durante a atividade ATP62.
+   _  Crie uma nova model de Agência. Adicione os atributos que julgar relevantes
+   _  Crie uma nova repository para o model de Agência.
+   _  Teste as operações de CRUD da repository na classe principal da aplicação.
 */
 
 package com.aquariusdev.banco;
