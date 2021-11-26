@@ -12,7 +12,7 @@ package com.aquariusdev;
 import com.aquariusdev.dao.CategoriaDao;
 import com.aquariusdev.models.Categoria;
 
-public class App {
+public class AppCategoria {
     public static void main( String[] args ){
         // Criando objeto da Classe Categoria via models:
         Categoria model = new Categoria(); 
@@ -25,7 +25,7 @@ public class App {
 
         dao.create(model); // Método Create do CRUD
         dao.update(model); // Método Update do CRUD
-        dao.delete(41); // Método Delete do CRUD
+        dao.delete(38); // Método Delete do CRUD
 
         // Método Read do CRUD:
         for (Categoria categoria : dao.read()) {

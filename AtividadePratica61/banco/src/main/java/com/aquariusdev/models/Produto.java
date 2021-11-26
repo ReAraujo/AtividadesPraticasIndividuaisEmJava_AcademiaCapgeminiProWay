@@ -24,7 +24,8 @@ public class Produto {
     private int id;
     private String nome;
     private String descricao;
-    private float preco;
+    private double preco;
+    private int id_categoria;
 
     public void setId(int id) {
         this.id = id;
@@ -47,10 +48,17 @@ public class Produto {
         return this.descricao;
     }
 
-    public void setPreco(float preco) {
+    public void setPreco(double preco) {
         this.preco = preco;
     }
-    public float getPreco() {
+    public double getPreco() {
         return this.preco;
+    }
+
+    public void setId_categoria(int id_categoria) {
+        this.id_categoria = id_categoria;
+    }
+    public int getId_categoria() {
+        return this.id_categoria;
     }
 }
