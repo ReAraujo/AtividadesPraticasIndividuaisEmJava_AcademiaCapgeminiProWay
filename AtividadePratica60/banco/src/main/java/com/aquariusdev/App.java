@@ -25,6 +25,7 @@ public class App {
         dao.update(model); // Método Update do CRUD
         dao.delete(41); // Método Delete do CRUD
 
+        // Método Read do CRUD:
         for (Categoria categoria : dao.read()) {
             System.out.printf("ID: %d | Nome: %s | Descrição: %s \n",categoria.getId(), categoria.getNome(), categoria.getDescricao()); 
         }
