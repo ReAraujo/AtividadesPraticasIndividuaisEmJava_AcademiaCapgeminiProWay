@@ -48,8 +48,12 @@ public class CategoriaDao {
         Categoria model = this.entManager.find(Categoria.class, id); // Busca no DB pelo ID, se tiver, é criada uma instância (Categoria model)
         // .find = método que busca uma única linha na tabela pelo ID e retorna a instância se ele achou
         // caso o .find não localizar nenhum ID, o retorno será nulo (null)
-        this.entManager.getTransaction().begin();  
-        this.entManager.remove(model); // E então é enviado para ser deletado
-        this.entManager.getTransaction().commit(); 
+        if(model != null){
+            this.entManager.getTransaction().begin();  
+            this.entManager.remove(model); // E então é enviado para ser deletado
+            this.entManager.getTransaction().commit(); 
+        }else{
+            System.out.println("Desculpe, não foi realizar a operação de deletar.\n");
+        }
     }
 }

@@ -15,13 +15,15 @@ public class App {
         // Criando objeto da Classe Categoria via models:
         Categoria model = new Categoria(); 
         model.setId(39);
-        model.setNome("Teste 6 JPA - Nome");
-        model.setDescricao("Teste 6 JPA - Descricao");
+        model.setNome("Teste 8 JPA - Nome");
+        model.setDescricao("Teste 8 JPA - Descricao");
 
         // Criando objeto da Classe CategoriaDao:
         CategoriaDao dao = new CategoriaDao();
 
-        dao.delete(39); // Persistiu no DB e gerou um ID
+        dao.create(model); // Método Create do CRUD
+        dao.update(model); // Método Update do CRUD
+        dao.delete(41); // Método Delete do CRUD
 
         for (Categoria categoria : dao.read()) {
             System.out.printf("ID: %d | Nome: %s | Descrição: %s \n",categoria.getId(), categoria.getNome(), categoria.getDescricao()); 
