@@ -1,8 +1,10 @@
-/* _  Utilize como base o projeto criado durante a ATP59.
-   _  Adicione uma camada dao ao projeto e crie nela uma classe CategoriaDao.
-   _  Refatore o projeto para extrair a lógica de create e read da App e colocar na CategoriaDAO.
-   _  Adicione os métodos de update e delete em CategoriaDao.
-   _  Teste na App todos os metodos de crud da CategoriaDao.
+/* _  Utilize como base o projeto criado durante a ATP60.
+   _  Adicione na camada dao uma classe Factory para abstrair a criacao do EntityManager.
+   _  Altere o persistence.xml para refletir as alterações das entidades .
+       <property name="hibernate.hbm2ddl.auto" value="update"/> 
+   _  Crie uma nova classe de modelo para mapear uma nova tabela no banco de dados.
+   _  Crie uma classe dao para o novo modelo.
+   _  Teste as operações de crud para este novo modelo.
 */
 
 package com.aquariusdev.models;
