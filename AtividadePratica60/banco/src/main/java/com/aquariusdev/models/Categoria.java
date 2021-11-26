@@ -1,10 +1,8 @@
-/* _  Crie um novo projeto maven utilizando o archetype maven-archetype-quickstart.
-   _  Adicione as dependencias do hibernate e do postgresql ao POM.XML.
-   _  Altere a versão do java na parte de build- plugins.
-   _  Crie o arquivo persistence.xml dentro da pasta src/main/resources/META-INF.
-   _  Adicione as informações do seu banco de dados no arquivo de persistencia.
-   _  Crie uma model categoria e mapeie com a tabela categoria do seu banco de dados, através do hibernate.
-   _  Teste no App.java um insert e um listar todos.
+/* _  Utilize como base o projeto criado durante a ATP59.
+   _  Adicione uma camada dao ao projeto e crie nela uma classe CategoriaDao.
+   _  Refatore o projeto para extrair a lógica de create e read da App e colocar na CategoriaDAO.
+   _  Adicione os métodos de update e delete em CategoriaDao.
+   _  Teste na App todos os metodos de crud da CategoriaDao.
 */
 
 package com.aquariusdev.models;
@@ -20,9 +18,8 @@ import javax.persistence.Table;
 @Table(name = "categoria") // Anotação @Table: Informando que a tabela possui um nome diferente
 public class Categoria {
     @Id // Como o ID é auto gerado em primary key, é preciso adicionar essa anotação @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Informando que a coluna ID é auto gerada - IDENTITY = incremento de um a um - No Oracle, usa-se o SEQUENCE
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Informando que a coluna ID é auto gerada - IDENTITY = incremento de um a um
     private int id;
-    // @Column (name = "nome_categoria") -> Pode ser adicionada a anotação @Column para dizer que essa refere-se ao nome de uma coluna que está no DB
     private String nome;
     private String descricao;
 
