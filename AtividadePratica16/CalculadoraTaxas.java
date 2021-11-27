@@ -8,70 +8,26 @@
 */
 package AtividadePratica16;
 
-import java.util.Scanner;
-
 public class CalculadoraTaxas {
-
-  private double resultado;
-  private double novoSaldo;
-  private double taxaTransferencia = 0.001;
-  private double taxaSaque = 1.30;
-  int quantidadeSaques;
-
+  private double valorTaxaTransf = 0.00001;
+  private double valorTaxaSaque = 1.30;
+  private int qtdSaques = 0;
   
-  public void transacoes_bancarias(){
-    Scanner sc = new Scanner(System.in);
+  
+  public double calculoTaxaTransf(double saldo){
+    double taxaTransf = saldo * valorTaxaTransf; 
+    return taxaTransf;
+  }
+
+  public double calculoTaxaSaque(double saldo){
+    double taxaSaque = 0;
+    qtdSaques++;
+
+    if(qtdSaques % 5 == 0){
+      taxaSaque = valorTaxaSaque;
+    }
     
-        switch (opcaoEscolhida){
-          case 1: 
-              novoSaldo = transferir(sc);
-              encerrar_programa();
-              break;
-          case 2: 
-              novoSaldo = sacar(sc); 
-              encerrar_programa();
-              break;
-          case 0:
-              encerrar_programa();
-              break;
-          }
+    return taxaSaque;
   }
 
-  static void encerrar_programa() {
-    System.out.println("| Encerrando programa...                    |");
-    System.out.println("| Obrigada por utilizar o QueenBank!        |");
-    System.out.println("| Você é o nosso melhor cliente!            |");
-  }
-
-  private double sacar(Scanner sc) {
-    System.out.print("| Qual valor você deseja sacar: ");
-    double valorSaque = Double.parseDouble(sc.nextLine());
-    novoSaldo = saldo - valorSaque;
-    System.out.print("| Saque realizado com sucesso!              |");
-    System.out.printf("\n| Seu saldo atual é: R$ %.2f             |", novoSaldo);
-    System.out.println("\n|-------------------------------------------|");
-    return novoSaldo;
-  }
-
-  private double transferir(Scanner sc){
-    double valorTaxaTrasnf;
-    System.out.print("| Qual valor você deseja transferir: R$ ");
-    double valorTransf = Double.parseDouble(sc.nextLine());
-    resultado = saldo - valorTransf;
-    valorTaxaTrasnf = (valorTransf * taxaTransferencia);
-    novoSaldo = resultado - valorTaxaTrasnf;
-    System.out.print("| Transferência realizada com sucesso!      |");
-    System.out.printf("\n| Taxa do serviço de transferência: R$ %.2f |", valorTaxaTrasnf);
-    System.out.printf("\n| Seu saldo atual é: R$ %.2f              |", novoSaldo);
-    System.out.println("\n|-------------------------------------------|");
-    return novoSaldo;
-  }
-
-  static int ler_numero(String mensagem){
-    Scanner sc = new Scanner(System.in);
-    System.out.print(mensagem);
-    int numero = Integer.parseInt(sc.nextLine());
-    return numero;
- }
-    
 }
