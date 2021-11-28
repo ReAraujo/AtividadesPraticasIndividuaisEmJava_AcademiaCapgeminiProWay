@@ -44,12 +44,4 @@ public class LivroController {
     public void deletar(Livro l){
         listaLivros.remove(l);
     }
-
-    
-
-    
-
-
-
-    
 }

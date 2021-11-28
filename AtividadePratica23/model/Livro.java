@@ -1,7 +1,5 @@
 package model;
 
-import java.util.Random;
-
 public class Livro {
     // Encapsulamento: 
     private int id;
@@ -72,5 +70,4 @@ public class Livro {
                 "| Categoria:  " + this.getEditora() + "|" +
                 "\n"; 
     }
-    
 }
