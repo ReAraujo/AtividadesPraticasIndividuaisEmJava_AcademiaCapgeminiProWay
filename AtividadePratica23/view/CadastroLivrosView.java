@@ -6,8 +6,8 @@ import controller.LivroController;
 import model.Livro;
 
 public class CadastroLivrosView {
+    static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
         LivroController controller = new LivroController();
         int opcaoEscolhida;
@@ -24,42 +24,82 @@ public class CadastroLivrosView {
                         listar(controller);
                 break;
                 case 3:
-                        //LivroController.alterar();
+                        alterar(controller);;
                 break;
                 case 4:
-                        //LivroController.deletar();
+                        deletar(controller);
                 break;
                 case 0:
                         System.out.println("Saindo do programa...");
                 break;
             }
         }while(opcaoEscolhida != 0);
-
-
     }
 
-    private static void listar(LivroController controller){
+    static void alterar(LivroController controller){
+        Livro idAlterar = null;
+        do {
+            System.out.print("\nDigite o número do ID do livro que deseja alterar: ");
+            int id = Integer.parseInt(sc.nextLine());
+
+            if(controller.verify(id) != null){
+                System.out.print("Digite o título do livro: ");
+                String titulo = sc.nextLine();
+                System.out.print("Digite o(os) autor(es): ");
+                String autor = sc.nextLine();
+                System.out.print("Digite a editora: ");
+                String editora = sc.nextLine();
+                System.out.print("Digite a categoria: ");
+                String categoria = sc.nextLine();
+
+                idAlterar = new Livro(id, titulo, autor, editora, categoria);
+                controller.alterar(idAlterar);
+                
+                System.out.println("\nAs informações do livro foram atualizadas com sucesso!");
+            } else{
+                System.out.println("O ID informado não foi localizado.");
+            }
+        } while (idAlterar == null);
+    }
+
+    static void deletar(LivroController controller){
+        Livro idDeletar = null;
+        do{
+            System.out.print("\nDigite o ID do livro que você deseja deletar: ");
+            int id = Integer.parseInt(sc.nextLine());
+            idDeletar = controller.verify(id);
+                if (idDeletar != null) {
+                    controller.deletar(idDeletar);  
+                    System.out.println("\nAs informações do livro foram deletadas com sucesso!");              
+                } else{
+                    System.out.println("O ID informado não foi localizado.");
+                }
+        } while(idDeletar == null);
+    }
+
+    static void listar(LivroController controller){
         ArrayList<Livro> lista = controller.listar();
-        for (Livro livro : lista) {
-            System.out.printf("\nTitulo: %s - Autor: %s - Editora: %s - Categoria: %s ", livro.getAutor(), livro.getAutor(), 
-             livro.getEditora(), livro.getCategoria());
+        for (Livro livros : lista) {
+            System.out.print(livros);
         }
     }
 
-    private static void cadastrar(Scanner sc, LivroController controller) {
-        Livro livro1 = new Livro(0);
+    static void cadastrar(Scanner sc, LivroController controller) {
+        System.out.print("\nDigite o ID do livro: ");
+        int id = Integer.parseInt(sc.nextLine());
         System.out.print("Digite o título do livro: ");
-        livro1.setTitulo(sc.nextLine());
-        System.out.print("Digite o/(os) autores: ");
-        livro1.setAutor(sc.nextLine());
+        String titulo = sc.nextLine();
+        System.out.print("Digite o(os) autor(es): ");
+        String autor = sc.nextLine();
         System.out.print("Digite a editora: ");
-        livro1.setEditora(sc.nextLine());
+        String editora = sc.nextLine();
         System.out.print("Digite a categoria: ");
-        livro1.setCategoria(sc.nextLine());
-        controller.salvar(livro1);
+        String categoria = sc.nextLine();
+        Livro novoLivro = new Livro(id, titulo, autor, editora, categoria);
+        controller.salvar(novoLivro);
     }
 
-    private static int menu(Scanner sc) {
+    static int menu(Scanner sc) {
         System.out.println("\nMenu de Opções:");
         System.out.println("\n\t1 - Cadastrar\n\t2 - Listar\n\t3 - Alterar\n\t4 - Deletar\n\t0 - Sair");
         System.out.print("\nDigite a opção escolhida: ");
@@ -67,7 +107,7 @@ public class CadastroLivrosView {
         return opcaoEscolhida;
     }
 
-    private static void cabeçalho() {
+    static void cabeçalho() {
         System.out.println("\n===============  Sistema de Cadastro de Livros  ===============");
         System.out.println("\t==========     Seja bem-vindo(a)!     ==========");
     }

@@ -1,13 +1,37 @@
 package model;
 
-public class Livro extends Base {
+import java.util.Random;
+
+public class Livro {
+    // Encapsulamento: 
+    private int id;
     private String titulo;
     private String autor;
     private String editora;
     private String categoria;
 
-    public Livro(int id){
-        super(id);
+    // Métodos construtores de classe
+    public Livro(String titulo, String autor, String editora, String categoria) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.editora = editora;
+        this.categoria = categoria;
+    }
+
+    public Livro(int id, String titulo, String autor, String editora, String categoria) {
+        this.id = id;
+        this.titulo = titulo;
+        this.autor = autor;
+        this.editora = editora;
+        this.categoria = categoria;
+    }
+
+    // Métodos setters (método de modificação) e getters (método de acesso)
+    public void setId(int id) {
+        this.id = id;
+    }
+    public int getId() {
+        return id;
     }
 
     public void setTitulo(String titulo) {
@@ -38,12 +62,15 @@ public class Livro extends Base {
         return categoria;
     }
 
+    // Método toString para impressão das informações
     public String toString() {
-        return "ID: "+this.getId()+"Nome: "+this.getNome()+"\nAutor: "+this.getAutor();
+        return "\nInformações - Lista de Livros: " + 
+                "| ID: " + this.getId() +  " " + 
+                "| Título: " + this.getTitulo() + " " + 
+                "| Autor: " + this.getAutor() + " " + 
+                "| Editora: " + this.getEditora() + " " + 
+                "| Categoria:  " + this.getEditora() + "|" +
+                "\n"; 
     }
-
-
-
-
     
 }
