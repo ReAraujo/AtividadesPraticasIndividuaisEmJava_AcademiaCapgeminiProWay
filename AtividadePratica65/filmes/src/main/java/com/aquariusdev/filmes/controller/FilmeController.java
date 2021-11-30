@@ -27,7 +27,7 @@ public class FilmeController {
     public String filmes(Model req){
         List<Filme> lista = (List<Filme>)repository.findAll();
         req.addAttribute("filme", lista);
-        return "filmes";
+        return "filmes"; // Retorna o HTML 'filmes'
     }
 
     @GetMapping("/filme/form")
