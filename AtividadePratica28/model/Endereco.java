@@ -10,6 +10,7 @@ public class Endereco{
     public String estado;
     public String pais;
 
+
     
     @Override
     public String toString() {

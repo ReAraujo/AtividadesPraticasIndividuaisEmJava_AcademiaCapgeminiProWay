@@ -25,61 +25,63 @@ public class Main {
     pf1.cpf = "123.456.789-89";
     pf1.rg = "5524019612";
     pf1.dataNascimento = "07/07/1980";
-
-    Endereco end1 = new Endereco();
-    end1.cep = "56.604-78";
-    end1.logradouro = "Rua da Ciclana";
-    end1.numero = "107";
-    end1.complemento = "Apartamento A-405";
-    end1.bairro = "Bairro da Ciclana";
-    end1.cidade = "Cidadolândia";
-    end1.estado = "Estadolândia";
-    end1.pais = "Paisolândia";
-
-    PessoaFisica pf2 = new PessoaFisica();
-    pf2.id = 0001;
-    pf2.nomeCompleto = "Fulana de Ciclana";
-    pf2.cpf = "123.456.789-89";
-    pf1.rg = "5524019612";
-    pf1.dataNascimento = "07/07/1980";
-
-    Endereco end3 = new Endereco();
-    end3.cep = "56.604-78";
-    end3.logradouro = "Rua da Ciclana";
-    end3.numero = "107";
-    end3.complemento = "Apartamento A-405";
-    end3.bairro = "Bairro da Ciclana";
-    end3.cidade = "Cidadolândia";
-    end3.estado = "Estadolândia";
-    end3.pais = "Paisolândia";
+    pf1.cep = "56.604-78";
+    pf1.logradouro = "Rua da Ciclana";
+    pf1.numero = "107";
+    pf1.complemento = "Apartamento A-405";
+    pf1.bairro = "Bairro da Ciclana";
+    pf1.cidade = "Cidadolândia";
+    pf1.estado = "Estadolândia";
+    pf1.pais = "Paisolândia";
 
     PessoaJuridica pj1 = new PessoaJuridica();
     pj1.id = 0002;
     pj1.nomeFantasia = "Mia's Company";
     pj1.cnpj = "20.300.400/0001-01";
     pj1.numeroInscricaoEstadual = ""; 
+    pj1.cep = "78.526-74";
+    pj1.logradouro = "Rua das Empresas Lucrativas";
+    pj1.numero = "4563";
+    pj1.complemento = "Torre A - Loja 1105";
+    pj1.bairro = "Das Flores";
+    pj1.cidade = "Porto Alegre";
+    pj1.estado = "Rio Grande do Sul";
+    pj1.pais = "Brasil";
 
-    Endereco end2 = new Endereco();
-    end2.cep = "78.526-74";
-    end2.logradouro = "Rua das Empresas Lucrativas";
-    end2.numero = "4563";
-    end2.complemento = "Torre A - Loja 1105";
-    end2.bairro = "Das Flores";
-    end2.cidade = "Porto Alegre";
-    end2.estado = "Rio Grande do Sul";
-    end2.pais = "Brasil";
-
-    
-    pf1.enderecoResidencial = end1;
-
-    pj1.enderecoComercial = end2;
-
-    pessoaFisicaController.create(pf1);
-    pessoaFisicaController.create(pf2);    
+    // Criando:
+    pessoaFisicaController.create(pf1);   
     pessoaJuridicaController.create(pj1);
 
+    // Lendo:
     System.out.println(pessoaFisicaController.read());
     System.out.println(pessoaJuridicaController.read());  
+
+    // Deletando:
+    pessoaFisicaController.delete(pf1); 
+
+    System.out.println(pessoaFisicaController.read());
+
+    // Alterando:
+    pf1.id = 0001;
+    pf1.nomeCompleto = "Ciclana";
+    pf1.cpf = "111.222.333-44";
+    pf1.rg = "5524019612";
+    pf1.dataNascimento = "01/01/1901";
+    pf1.cep = "11.222-33";
+    pf1.logradouro = "Rua da Ciclana";
+    pf1.numero = "107";
+    pf1.complemento = "Apartamento A-405";
+    pf1.bairro = "Bairro da Ciclana";
+    pf1.cidade = "Cidadolândia";
+    pf1.estado = "Estadolândia";
+    pf1.pais = "Paisolândia";
+
+    pessoaFisicaController.update(pf1); 
+
+    // Lendo:
+    System.out.println(pessoaFisicaController.read());
+
+
   }
     
 }

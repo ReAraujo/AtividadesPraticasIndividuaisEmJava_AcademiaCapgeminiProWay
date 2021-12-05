@@ -6,6 +6,14 @@ public class PessoaFisica extends Pessoa {
     public String rg;
     public String dataNascimento;
 
+    public PessoaFisica() {
+        super();
+        this.nomeCompleto = nomeCompleto;
+        this.cpf = cpf;
+        this.rg = rg;
+        this.dataNascimento = dataNascimento;
+    }
+
     @Override
     public String toString() {
         String retorno3 =   "\n| Nome completo: " + this.nomeCompleto + 
