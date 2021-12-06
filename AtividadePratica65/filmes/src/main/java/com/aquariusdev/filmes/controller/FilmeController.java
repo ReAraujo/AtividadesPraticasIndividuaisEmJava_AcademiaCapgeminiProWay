@@ -18,12 +18,12 @@ public class FilmeController {
     // Encapsulamento: 
     private FilmeRepository repository;
 
-    // Método construtor via injeção de dependências que está aguardando uma instância de FilmeRepository:
+    // Método construtor via injeção de dependências que está aguardando uma instância de ClienteRepository:
     public FilmeController(FilmeRepository repository) {
         this.repository = repository;
     }
 
-    @GetMapping("/filme") // Mapeando requisição tipo 'get' para a rota "/filme" - tipo 'get' mostra os parâmetros inseridos na url
+    @GetMapping("/filme") // Mapeando requisição tipo 'get' para a rota "/cliente" - tipo 'get' mostra os parâmetros inseridos na url
     public String filmes(Model req){
         List<Filme> lista = (List<Filme>)repository.findAll();
         req.addAttribute("filme", lista);
@@ -37,7 +37,7 @@ public class FilmeController {
         return "filmes-form";
     }
 
-    @PostMapping("/filme/salvar") // Mapeando requisição tipo 'post' para rota "/filme/salvar" - tipo 'post' = mantem as informações ocultas na url
+    @PostMapping("/filme/salvar") // Mapeando requisição tipo 'post' para rota "/cliente/salvar" - tipo 'post' = mantem as informações ocultas na url
     public String salvar(Filme model){
         repository.save(model);
         return "redirect:/filme";
