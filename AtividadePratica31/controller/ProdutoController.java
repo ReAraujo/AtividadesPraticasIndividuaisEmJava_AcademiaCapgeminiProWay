@@ -1,5 +1,7 @@
-package AtividadePratica31_TratamentoDeExcecoes.controller;
+package controller;
 
-public class ProdutoController {
+import model.Produto;
+
+public class ProdutoController extends BaseController<Produto> {
     
 }
