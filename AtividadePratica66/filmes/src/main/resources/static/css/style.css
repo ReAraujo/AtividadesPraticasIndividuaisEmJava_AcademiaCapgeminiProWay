@@ -12,11 +12,11 @@ main{
     text-align: center;
 }
 
-.botaoCadastrarNovoFilme{
+.botaoCadastrarNovoCliente{
     float: left;
 }
 
-.botaoSalvarNovoFilme{
+.botaoSalvarNovoCliente{
     float: right;
 }
 
