@@ -4,15 +4,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity // Informando que é uma entidade de tabela do DB
-@Table(name = "cliente") // Informando que a tabela possui nome "cliente"
-public class Cliente {
+@Table(name = "tipocliente") // Informando que a tabela possui nome "tipocliente"
+public class TipoCliente {
     // Encapsulamento:
     // Anotações @Getter @Setter = Métodos getters (métodos de acesso) e setters (métodos de modificação) inicializados pelo Lombok
     @Id
@@ -21,15 +20,5 @@ public class Cliente {
     private int id;
 
     @Getter @Setter
-    private String nomeCompleto;
-
-    @Getter @Setter
-    private String dataNascimento;
-
-    @Getter @Setter
-    private String cpf;
-
-    @Getter @Setter
-    @ManyToOne
-    private TipoCliente tipoCliente;
+    private String tipoPessoa;
 }
