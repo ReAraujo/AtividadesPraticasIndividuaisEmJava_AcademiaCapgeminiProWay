@@ -207,7 +207,5 @@ public class View {
         categoriaController.update(categoriaAtualizar);
         System.out.println("Produto atualizado com sucesso!");
     }
-   
-
     
 }
