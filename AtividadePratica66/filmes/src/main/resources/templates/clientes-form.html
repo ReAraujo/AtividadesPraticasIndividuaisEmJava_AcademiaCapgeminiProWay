@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head th:replace="~{base :: headBase(Clientes-Cadastrar)}"></head>
+<body>
+    <header th:replace="~{base :: headerBase}"></header>
+    <main>
+    <h2>Cadastro - Clientes</h2> <br />
+    <form action="/cliente/salvar" method="post">
+        <input type="hidden" name="id" id="id" th:value="${cliente.id}">
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Nome Completo:</span>
+            <input type="text" class="form-control" name="nomeCompleto" id="nomeCompleto" th:value="${cliente.nomeCompleto}"> 
+        </div>  
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Data de Nascimento:</span>
+            <input type="date" class="form-control" name="dataNascimento" id="dataNascimento" th:value="${cliente.dataNascimento}">
+        </div>              
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">CPF:</span>
+            <input type="number" class="form-control" name="cpf" id="cpf" th:value="${cliente.cpf}"> 
+        </div>  
+            <input class="btn btn-primary botaoSalvarNovoFilme" type="submit" value="Salvar">
+    </form>
+    <br />
+    <a class="btn btn-light" href="/cliente">Voltar para Lista de Clientes</a> <br />
+    </main>
+    </body>
+</html>
+

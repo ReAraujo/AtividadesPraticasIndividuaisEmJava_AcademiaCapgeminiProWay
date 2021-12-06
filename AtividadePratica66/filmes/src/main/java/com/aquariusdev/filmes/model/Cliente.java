@@ -24,8 +24,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity // Informando que é uma entidade de tabela do DB
-@Table(name = "filme") // Informando que a tabela possui nome "filme"
-public class Filme {
+@Table(name = "cliente") // Informando que a tabela possui nome "filme"
+public class Cliente {
     // Encapsulamento:
     // Anotações @Getter @Setter = Métodos getters (métodos de acesso) e setters (métodos de modificação) inicializados pelo Lombok
     @Id
@@ -34,11 +34,11 @@ public class Filme {
     private int id;
 
     @Getter @Setter
-    private String titulo;
+    private String nomeCompleto;
 
     @Getter @Setter
-    private String diretor;
+    private String dataNascimento;
 
     @Getter @Setter
-    private String genero;
+    private String cpf;
 }
